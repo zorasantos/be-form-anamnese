@@ -1,11 +1,8 @@
 import fastify from 'fastify'
+import { root } from '../../shared/routes/fastify'
 
-const app = fastify()
-
-app.get('/', function (req, reply) {
-  return reply.status(200).send('hello world fastify')
-})
-
+const app = fastify({ logger: true })
+app.register(root)
 app
   .listen({
     host: '0.0.0.0',
@@ -13,4 +10,5 @@ app
   })
   .then(() => {
     console.log('Fastify server Running in port 3000')
+    console.log(app.printRoutes())
   })
