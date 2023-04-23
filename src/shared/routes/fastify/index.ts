@@ -1,10 +1,10 @@
 import { FastifyPluginAsync } from 'fastify'
-import { ListUserFactory } from '../../../modules/user/ListUser/ListUserFactory'
+import { CreatePersonalDataFactory } from '../../../modules/PesonalData/CreatePesonalData/CreatePersonalDataFactory'
 import { adaptRouteFastify } from '../../../main/adapters/fastifyRouterAdapter'
 
 export const root: FastifyPluginAsync = async (
   fastify,
   opts,
 ): Promise<void> => {
-  fastify.get('/user', adaptRouteFastify(ListUserFactory()))
+  fastify.post('/form/personal', adaptRouteFastify(CreatePersonalDataFactory()))
 }

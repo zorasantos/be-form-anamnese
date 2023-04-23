@@ -1,9 +1,9 @@
 import { Router } from 'express'
 
-import { userRoutes } from './user.routes'
+import { personalRoutes } from './personal.routes'
 
 const router = Router()
 
-router.use('/user', userRoutes)
+router.use('/form', personalRoutes)
 
 export { router }
