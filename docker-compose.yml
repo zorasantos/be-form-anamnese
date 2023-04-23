@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  database:
+    image: postgres:14-alpine
+    container_name: db_form_anamnese
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=anamnese
+    volumes:
+      - pgdata:/data/postgres
+volumes:
+  pgdata:
+    driver: local

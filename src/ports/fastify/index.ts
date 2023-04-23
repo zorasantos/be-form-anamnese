@@ -10,5 +10,4 @@ app
   })
   .then(() => {
     console.log('Fastify server Running in port 3000')
-    console.log(app.printRoutes())
   })

@@ -1,8 +1,8 @@
 import { Request, Response } from 'express'
-import { ListUserController } from '../../modules/user/ListUser/ListUserController'
 import { HttpRequest } from '../../shared/protocols/http'
+import { IController } from '../../shared/protocols/controller'
 
-export const adaptRouteExpress = (controller: ListUserController) => {
+export const adaptRouteExpress = (controller: IController) => {
   return async (req: Request, res: Response) => {
     const httpRequest: HttpRequest = {
       body: req.body,

@@ -1,8 +1,8 @@
 import { FastifyRequest, FastifyReply } from 'fastify'
-import { ListUserController } from '../../modules/user/ListUser/ListUserController'
 import { HttpRequest } from '../../shared/protocols/http'
+import { IController } from '../../shared/protocols/controller'
 
-export const adaptRouteFastify = (controller: ListUserController) => {
+export const adaptRouteFastify = (controller: IController) => {
   return async (req: FastifyRequest, res: FastifyReply) => {
     const httpRequest: HttpRequest = {
       body: req.body,
