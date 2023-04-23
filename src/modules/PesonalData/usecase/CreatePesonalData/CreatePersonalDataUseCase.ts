@@ -1,5 +1,5 @@
-import { IPersonalDataDTO } from '../infra/repository/IPersonalDataDTO'
-import { IPersonalDataRepository } from '../infra/repository/IPersonalDataRepository'
+import { IPersonalDataDTO } from '../../infra/repository/IPersonalDataDTO'
+import { IPersonalDataRepository } from '../../infra/repository/IPersonalDataRepository'
 
 export class CreatePersonalDataUseCase {
   // eslint-disable-next-line no-useless-constructor

@@ -1,7 +1,7 @@
-import { success } from '../../../shared/helper/httpHelper'
-import { IController } from '../../../shared/protocols/controller'
-import { HttpRequest, HttpResponse } from '../../../shared/protocols/http'
-import { IPersonalDataDTO } from '../infra/repository/IPersonalDataDTO'
+import { success } from '../../../../shared/helper/httpHelper'
+import { IController } from '../../../../shared/protocols/controller'
+import { HttpRequest, HttpResponse } from '../../../../shared/protocols/http'
+import { IPersonalDataDTO } from '../../infra/repository/IPersonalDataDTO'
 import { CreatePersonalDataUseCase } from './CreatePersonalDataUseCase'
 
 export class CreatePersonalController implements IController {
@@ -9,7 +9,6 @@ export class CreatePersonalController implements IController {
   constructor(private readonly listUseCase: CreatePersonalDataUseCase) {}
 
   async handle(request: HttpRequest): Promise<HttpResponse> {
-    console.log('controller', request)
     const {
       addressDetails,
       birthday,
