@@ -1,5 +1,6 @@
+import { randomUUID } from 'node:crypto'
+
 export interface IPersonalDataProps {
-  id: string
   name: string
   birthday: string
   gender: string
@@ -16,10 +17,16 @@ export interface IPersonalDataProps {
 }
 
 export class PersonalData {
+  private _id: string
   private props: IPersonalDataProps
 
-  constructor(props: IPersonalDataProps) {
+  constructor(props: IPersonalDataProps, id?: string) {
+    this._id = id ?? randomUUID()
     this.props = props
+  }
+
+  public get id() {
+    return this._id
   }
 
   public set name(name: string) {

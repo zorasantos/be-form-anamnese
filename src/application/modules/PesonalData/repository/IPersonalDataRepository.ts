@@ -1,5 +1,5 @@
-import { IPersonalDataDTO } from './IPersonalDataDTO'
+import { PersonalData } from '../Entities/PersonalData'
 
 export interface IPersonalDataRepository {
-  create(data: IPersonalDataDTO): Promise<void>
+  create(data: PersonalData): Promise<void>
 }
