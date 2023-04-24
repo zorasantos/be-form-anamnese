@@ -4,7 +4,6 @@ import { IController } from '../../shared/protocols/controller'
 
 export const adaptRouteFastify = (controller: IController) => {
   return async (req: FastifyRequest, res: FastifyReply) => {
-    console.log('adapter fastify', req.body)
     const httpRequest: HttpRequest = {
       body: req.body,
     }
