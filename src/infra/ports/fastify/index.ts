@@ -1,5 +1,5 @@
 import fastify from 'fastify'
-import { root } from '../../shared/routes/fastify'
+import { root } from '../../routes/fastify'
 
 const app = fastify({ logger: true })
 app.register(root)

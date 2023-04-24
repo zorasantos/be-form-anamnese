@@ -1,4 +1,4 @@
-import { PersonalDataRepository } from '../../infra/repository/PersonalDataRepository'
+import { PersonalDataRepository } from '../../repository/PersonalDataRepository'
 import { CreatePersonalController } from './CreatePersonalController'
 import { CreatePersonalDataUseCase } from './CreatePersonalDataUseCase'
 
