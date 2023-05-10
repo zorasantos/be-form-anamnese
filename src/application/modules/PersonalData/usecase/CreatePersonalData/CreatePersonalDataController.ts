@@ -1,11 +1,10 @@
 import { success } from '../../../../../shared/helper/httpHelper'
 import { IController } from '../../../../../shared/protocols/controller'
 import { HttpRequest, HttpResponse } from '../../../../../shared/protocols/http'
-import { IPersonalDataDTO } from '../../repository/IPersonalDataDTO'
+import { personalDataSchema } from './CreatePersonalDataSchema'
 import { CreatePersonalDataUseCase } from './CreatePersonalDataUseCase'
 
-export class CreatePersonalController implements IController {
-  // eslint-disable-next-line no-useless-constructor
+export class CreatePersonalDataController implements IController {
   constructor(private readonly listUseCase: CreatePersonalDataUseCase) {}
 
   async handle(request: HttpRequest): Promise<HttpResponse> {
@@ -23,7 +22,7 @@ export class CreatePersonalController implements IController {
       state,
       street,
       zipCode,
-    } = request.body as IPersonalDataDTO
+    } = personalDataSchema.parse(request.body)
 
     const data = {
       addressDetails,

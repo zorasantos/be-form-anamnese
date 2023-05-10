@@ -18,10 +18,14 @@ export interface IPersonalDataProps {
 
 export class PersonalData {
   private _id: string
+  private _createdAt: Date
+  private _updatedAt: Date
   private props: IPersonalDataProps
 
   constructor(props: IPersonalDataProps, id?: string) {
     this._id = id ?? randomUUID()
+    this._createdAt = new Date()
+    this._updatedAt = new Date()
     this.props = props
   }
 
@@ -131,5 +135,13 @@ export class PersonalData {
 
   public get state(): string {
     return this.props.state
+  }
+
+  public get createdAt(): Date {
+    return this._createdAt
+  }
+
+  public get updatedAt(): Date {
+    return this._updatedAt
   }
 }

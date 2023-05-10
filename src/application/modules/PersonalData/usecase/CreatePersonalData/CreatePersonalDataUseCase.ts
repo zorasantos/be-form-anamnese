@@ -18,7 +18,6 @@ interface PersonalDataRequest {
 }
 
 export class CreatePersonalDataUseCase {
-  // eslint-disable-next-line no-useless-constructor
   constructor(private userRepository: IPersonalDataRepository) {}
 
   async execute(request: PersonalDataRequest): Promise<void> {

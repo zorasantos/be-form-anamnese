@@ -1,11 +1,11 @@
 import { PersonalDataRepository } from '../../../../../infra/database/prisma/repositories/PersonalData/PersonalDataRepository'
-import { CreatePersonalController } from './CreatePersonalController'
+import { CreatePersonalDataController } from './CreatePersonalDataController'
 import { CreatePersonalDataUseCase } from './CreatePersonalDataUseCase'
 
-export const CreatePersonalDataFactory = (): CreatePersonalController => {
+export const CreatePersonalDataFactory = (): CreatePersonalDataController => {
   const repository = new PersonalDataRepository()
   const useCase = new CreatePersonalDataUseCase(repository)
-  const controller = new CreatePersonalController(useCase)
+  const controller = new CreatePersonalDataController(useCase)
 
   return controller
 }

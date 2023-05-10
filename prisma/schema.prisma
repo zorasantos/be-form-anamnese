@@ -9,7 +9,7 @@ datasource db {
 }
 
 model PersonalData {
-  id             String @id @default(uuid())
+  id             String   @id @default(uuid())
   name           String
   birthday       String
   gender         String
@@ -23,4 +23,6 @@ model PersonalData {
   neighborhood   String
   city           String
   state          String
+  createdAt      DateTime
+  updatedAt      DateTime @default(now())
 }

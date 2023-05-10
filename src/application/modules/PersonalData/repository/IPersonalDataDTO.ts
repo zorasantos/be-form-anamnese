@@ -12,4 +12,6 @@ export interface IPersonalDataDTO {
   neighborhood: string
   city: string
   state: string
+  createdAt: Date
+  updatedAt: Date
 }
