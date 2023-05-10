@@ -1,0 +1,274 @@
+[
+    {
+        "Id": "7379f739321da93c10571fc94f340aed64bab8501585885de869953d4775fc65",
+        "Created": "2023-04-23T22:27:42.524696601Z",
+        "Path": "docker-entrypoint.sh",
+        "Args": [
+            "postgres"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 5165,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2023-05-10T15:30:06.829560351Z",
+            "FinishedAt": "2023-05-10T15:30:01.402540763Z"
+        },
+        "Image": "sha256:9d94e6318ef20718479e031c9afdd911c572c0fdf724437b4c87de4b24136dae",
+        "ResolvConfPath": "/var/lib/docker/containers/7379f739321da93c10571fc94f340aed64bab8501585885de869953d4775fc65/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/7379f739321da93c10571fc94f340aed64bab8501585885de869953d4775fc65/hostname",
+        "HostsPath": "/var/lib/docker/containers/7379f739321da93c10571fc94f340aed64bab8501585885de869953d4775fc65/hosts",
+        "LogPath": "/var/lib/docker/containers/7379f739321da93c10571fc94f340aed64bab8501585885de869953d4775fc65/7379f739321da93c10571fc94f340aed64bab8501585885de869953d4775fc65-json.log",
+        "Name": "/db_form_anamnese",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "be-form-anamnese_default",
+            "PortBindings": {
+                "5432/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "5432"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "always",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "Mounts": [
+                {
+                    "Type": "volume",
+                    "Source": "be-form-anamnese_pgdata",
+                    "Target": "/data/postgres",
+                    "VolumeOptions": {}
+                }
+            ],
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/3b30e76d1be9f24f9d19a2098e78860e9f1bf7885e70b075ea319c958a612010-init/diff:/var/lib/docker/overlay2/20c3c9eb95672bdcb408275e0daeb03ae628245e886e7d6075a3aa1a7f8bd0b9/diff:/var/lib/docker/overlay2/0d84af9be90e9c185449fb9af9cb307e71c84ebfe2ad609848a1ba3d675253ae/diff:/var/lib/docker/overlay2/ac01b2d82eb010605287e70b92eb95dc8050bbfddeca1cd34c92bf0da9e3c3e1/diff:/var/lib/docker/overlay2/cd002d295e19ae472bc1d11069ac1d711d20d3e979de9131f0f5efddc170f547/diff:/var/lib/docker/overlay2/e35474d3be550ab5caf5ca17f253aca2f0afcd181dedc1ed3c957aa364fb4409/diff:/var/lib/docker/overlay2/d05cb21754a9695277005db88dd2544fb2ef38a134fef1fcaf23124e257cfffc/diff:/var/lib/docker/overlay2/d51ff24d2367ddeca61e22fa910f74abfeb688434d24e08b81f463bbb270ca4a/diff:/var/lib/docker/overlay2/7f08fdfb16771c4ac6592390a83fe4eca26ef66295a3b7af85c589d5da6fc381/diff",
+                "MergedDir": "/var/lib/docker/overlay2/3b30e76d1be9f24f9d19a2098e78860e9f1bf7885e70b075ea319c958a612010/merged",
+                "UpperDir": "/var/lib/docker/overlay2/3b30e76d1be9f24f9d19a2098e78860e9f1bf7885e70b075ea319c958a612010/diff",
+                "WorkDir": "/var/lib/docker/overlay2/3b30e76d1be9f24f9d19a2098e78860e9f1bf7885e70b075ea319c958a612010/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "be-form-anamnese_pgdata",
+                "Source": "/var/lib/docker/volumes/be-form-anamnese_pgdata/_data",
+                "Destination": "/data/postgres",
+                "Driver": "local",
+                "Mode": "z",
+                "RW": true,
+                "Propagation": ""
+            },
+            {
+                "Type": "volume",
+                "Name": "7bbd0bdae0b9913909f74740b37b6402b0c0ee6f300c121bd997bcbb73a435c3",
+                "Source": "/var/lib/docker/volumes/7bbd0bdae0b9913909f74740b37b6402b0c0ee6f300c121bd997bcbb73a435c3/_data",
+                "Destination": "/var/lib/postgresql/data",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "7379f739321d",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "5432/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "POSTGRES_PASSWORD=postgres",
+                "POSTGRES_DB=anamnese",
+                "POSTGRES_USER=postgres",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=en_US.utf8",
+                "PG_MAJOR=14",
+                "PG_VERSION=14.7",
+                "PG_SHA256=cef60f0098fa8101c1546f4254e45b722af5431337945b37af207007630db331",
+                "PGDATA=/var/lib/postgresql/data"
+            ],
+            "Cmd": [
+                "postgres"
+            ],
+            "Image": "postgres:14-alpine",
+            "Volumes": {
+                "/var/lib/postgresql/data": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "0d87afed41a102e4fcd9eed8d58b79b1735d0e6bed7d3aada86e85a7782920f1",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:9d94e6318ef20718479e031c9afdd911c572c0fdf724437b4c87de4b24136dae",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "be-form-anamnese",
+                "com.docker.compose.project.config_files": "/home/zora/workspace/be-form-anamnese/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/home/zora/workspace/be-form-anamnese",
+                "com.docker.compose.service": "database",
+                "com.docker.compose.version": "2.17.2"
+            },
+            "StopSignal": "SIGINT"
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "1e954de0ae25c7041c9c6f20f94475c370309fbd80c785fedac64c1e629a6bfd",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "5432/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "5432"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "5432"
+                    }
+                ]
+            },
+            "SandboxKey": "/var/run/docker/netns/1e954de0ae25",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "be-form-anamnese_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "db_form_anamnese",
+                        "database",
+                        "7379f739321d"
+                    ],
+                    "NetworkID": "ccce92d7cf5d031e5df345f57e52cf2a9e9ff343f8a861d82551ead53af839c2",
+                    "EndpointID": "983b21d2d05cf320309b6ade70fc2403093c75bdc7b00e2fd350fcb9d151b4c5",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:12:00:02",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]

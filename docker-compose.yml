@@ -13,6 +13,17 @@ services:
       - POSTGRES_DB=anamnese
     volumes:
       - pgdata:/data/postgres
+  app:
+    build: .
+    container_name: app_form_anamnese
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/usr/app
+    links:
+      - database
+    depends_on:
+      - database
 volumes:
   pgdata:
     driver: local
