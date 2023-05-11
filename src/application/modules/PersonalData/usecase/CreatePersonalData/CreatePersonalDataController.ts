@@ -1,8 +1,10 @@
 import { success } from '@shared/helper/httpHelper'
 import { IController } from '@shared/protocols/controller'
 import { HttpRequest, HttpResponse } from '@shared/protocols/http'
-import { personalDataSchema } from './CreatePersonalDataSchema'
 import { CreatePersonalDataUseCase } from './CreatePersonalDataUseCase'
+import { IPersonalDataProps } from '../../Entities/PersonalData'
+
+interface IPersonalDataRequest extends IPersonalDataProps {}
 
 export class CreatePersonalDataController implements IController {
   constructor(private readonly listUseCase: CreatePersonalDataUseCase) {}
@@ -22,7 +24,7 @@ export class CreatePersonalDataController implements IController {
       state,
       street,
       zipCode,
-    } = personalDataSchema.parse(request.body)
+    } = request.body as IPersonalDataRequest
 
     const data = {
       addressDetails,

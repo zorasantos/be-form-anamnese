@@ -1,26 +1,12 @@
-import { PersonalData } from '../../Entities/PersonalData'
+import { IPersonalDataProps, PersonalData } from '../../Entities/PersonalData'
 import { IPersonalDataRepository } from '../../repository/IPersonalDataRepository'
 
-interface PersonalDataRequest {
-  name: string
-  birthday: string
-  gender: string
-  occupation: string
-  maritalStatus: string
-  religion: string
-  zipCode: string
-  street: string
-  number: string
-  addressDetails: string
-  neighborhood: string
-  city: string
-  state: string
-}
+interface IPersonalDataRequest extends IPersonalDataProps {}
 
 export class CreatePersonalDataUseCase {
   constructor(private userRepository: IPersonalDataRepository) {}
 
-  async execute(request: PersonalDataRequest): Promise<void> {
+  async execute(request: IPersonalDataRequest): Promise<void> {
     const {
       name,
       birthday,
