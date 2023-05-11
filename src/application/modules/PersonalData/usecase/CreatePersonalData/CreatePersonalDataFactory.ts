@@ -1,4 +1,4 @@
-import { PersonalDataRepository } from '../../../../../infra/database/prisma/repositories/PersonalData/PersonalDataRepository'
+import { PersonalDataRepository } from '@infra/database/prisma/repositories/PersonalData/PersonalDataRepository'
 import { CreatePersonalDataController } from './CreatePersonalDataController'
 import { CreatePersonalDataUseCase } from './CreatePersonalDataUseCase'
 

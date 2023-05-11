@@ -1,6 +1,6 @@
-import { success } from '../../../../../shared/helper/httpHelper'
-import { IController } from '../../../../../shared/protocols/controller'
-import { HttpRequest, HttpResponse } from '../../../../../shared/protocols/http'
+import { success } from '@shared/helper/httpHelper'
+import { IController } from '@shared/protocols/controller'
+import { HttpRequest, HttpResponse } from '@shared/protocols/http'
 import { personalDataSchema } from './CreatePersonalDataSchema'
 import { CreatePersonalDataUseCase } from './CreatePersonalDataUseCase'
 

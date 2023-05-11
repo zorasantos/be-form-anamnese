@@ -1,6 +1,6 @@
 import { FastifyPluginAsync } from 'fastify'
 import { adaptRouteFastify } from '../../adapters/fastifyRouterAdapter'
-import { CreatePersonalDataFactory } from '../../../application/modules/PersonalData/usecase/CreatePersonalData/CreatePersonalDataFactory'
+import { CreatePersonalDataFactory } from '@application/modules/PersonalData/usecase/CreatePersonalData/CreatePersonalDataFactory'
 
 export const root: FastifyPluginAsync = async (
   fastify,

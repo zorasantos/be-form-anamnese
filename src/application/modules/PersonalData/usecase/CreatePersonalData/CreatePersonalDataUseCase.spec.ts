@@ -1,7 +1,7 @@
 import { describe, test } from 'node:test'
 import assert from 'node:assert'
 import { CreatePersonalDataUseCase } from './CreatePersonalDataUseCase'
-import { InMemoryPersonalDataRepository } from '../../../../../infra/database/prisma/repositories/PersonalData/InMemoryPersonalDataRepository'
+import { InMemoryPersonalDataRepository } from '@infra/database/prisma/repositories/PersonalData/InMemoryPersonalDataRepository'
 
 describe('Personal Data', () => {
   test('should be able to send personal data', async () => {

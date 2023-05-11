@@ -1,6 +1,6 @@
 import { FastifyRequest, FastifyReply } from 'fastify'
-import { HttpRequest } from '../../shared/protocols/http'
-import { IController } from '../../shared/protocols/controller'
+import { HttpRequest } from '@shared/protocols/http'
+import { IController } from '@shared/protocols/controller'
 
 export const adaptRouteFastify = (controller: IController) => {
   return async (req: FastifyRequest, res: FastifyReply) => {

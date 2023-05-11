@@ -1,5 +1,5 @@
-import { PersonalData } from '../../../../../application/modules/PersonalData/Entities/PersonalData'
-import { IPersonalDataRepository } from '../../../../../application/modules/PersonalData/repository/IPersonalDataRepository'
+import { PersonalData } from '@application/modules/PersonalData/Entities/PersonalData'
+import { IPersonalDataRepository } from '@application/modules/PersonalData/repository/IPersonalDataRepository'
 import { PrismaPersonalDataMapper } from '../../mappers/prismaPersonalDataMapper'
 import { prismaClient } from '../../prismaClient'
 
