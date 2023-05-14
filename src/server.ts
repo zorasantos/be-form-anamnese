@@ -1,2 +1,2 @@
-// import './infra/ports/fastify'
-import './infra/ports/express'
+import './infra/ports/fastify'
+// import './infra/ports/express'
