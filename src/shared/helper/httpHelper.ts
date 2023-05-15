@@ -1,6 +1,6 @@
 import { HttpResponse } from '../protocols/http'
 
-export const success = (data: unknown): HttpResponse => ({
-  statusCode: 200,
+export const create = (data: unknown): HttpResponse => ({
+  statusCode: 201,
   body: data,
 })

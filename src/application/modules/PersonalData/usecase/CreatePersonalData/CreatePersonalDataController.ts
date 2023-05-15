@@ -1,4 +1,4 @@
-import { success } from '@shared/helper/httpHelper'
+import { create } from '@shared/helper/httpHelper'
 import { IController } from '@shared/protocols/controller'
 import { HttpRequest, HttpResponse } from '@shared/protocols/http'
 import { CreatePersonalDataUseCase } from './CreatePersonalDataUseCase'
@@ -42,6 +42,6 @@ export class CreatePersonalDataController implements IController {
       zipCode,
     }
     const useCase = await this.listUseCase.execute(data)
-    return success(useCase)
+    return create(useCase)
   }
 }
