@@ -1,5 +1,3 @@
-import { describe, test } from 'node:test'
-import assert from 'node:assert'
 import { CreatePersonalDataUseCase } from './CreatePersonalDataUseCase'
 import { InMemoryPersonalDataRepository } from '@infra/database/prisma/repositories/PersonalData/InMemoryPersonalDataRepository'
 
@@ -24,6 +22,6 @@ describe('Personal Data', () => {
     }
 
     const result = await personalData.execute(data)
-    assert.deepStrictEqual(result, undefined)
+    expect(result).toBe(undefined)
   })
 })

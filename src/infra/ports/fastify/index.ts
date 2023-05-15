@@ -1,7 +1,7 @@
 import fastify from 'fastify'
 import { root } from '../../routes/fastify'
 
-const app = fastify({ logger: true })
+export const app = fastify({ logger: true })
 app.register(root)
 app
   .listen({

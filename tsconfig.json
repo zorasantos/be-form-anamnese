@@ -4,7 +4,7 @@
     "strictNullChecks": true,
     "module": "commonjs",
     "moduleResolution": "node",
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "rootDir": "./",
     "outDir": "./dist",
     "esModuleInterop": true,
@@ -13,9 +13,9 @@
     "resolveJsonModule": true,
     "strict": true,
     "paths": {
-      "@application/*": ["./src/application/*"],
-      "@infra/*": ["./src/infra/*"],
-      "@shared/*": ["./src/shared/*"]
+      "@application/*": ["./application/*"],
+      "@infra/*": ["./infra/*"],
+      "@shared/*": ["./shared/*"]
     }
   }
 }

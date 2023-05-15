@@ -10,13 +10,16 @@ export default async (): Promise<Config> => {
     bail: true,
     collectCoverage: true,
     coverageProvider: 'v8',
+    detectOpenHandles: true,
     preset: 'ts-jest',
+    silent: true,
+    cache: false,
+    passWithNoTests: true,
+    testRegex: '.e2e.spec.ts$',
+    testEnvironment: './prisma/prisma-test-env.ts',
     testPathIgnorePatterns: ['/node_modules/', '/coverage/'],
     moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
-      prefix: '<rootDir>/',
+      prefix: '<rootDir>/src/',
     }),
-    transform: {
-      '^.+\\.(t|j)sx?$': '@swc/jest',
-    },
   }
 }

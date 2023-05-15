@@ -1,4 +1,8 @@
-import type { Config } from '@jest/types'
+import type {
+  EnvironmentContext,
+  JestEnvironmentConfig,
+} from '@jest/environment'
+
 import { exec } from 'node:child_process'
 import dotenv from 'dotenv'
 import NodeEnvironment from 'jest-environment-node'
@@ -16,8 +20,8 @@ export default class PrismaTestEnvironment extends NodeEnvironment {
   private schema: string
   private connectionString: string
 
-  constructor(config: Config.ProjectConfig) {
-    super(config)
+  constructor(config: JestEnvironmentConfig, _context: EnvironmentContext) {
+    super(config, _context)
 
     const dbUser = process.env.DATABASE_USER
     const dbPass = process.env.DATABASE_PASS

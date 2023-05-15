@@ -1,4 +1,5 @@
-import { app } from '@infra/ports/express/index'
+import { app } from '@infra/ports/express'
+// import { app } from '../../../../../infra/ports/express'
 import request from 'supertest'
 
 const data = {
@@ -19,8 +20,6 @@ const data = {
 
 test('Create Personal Data', async () => {
   const response = await request(app).post('/form/personal').send(data)
-
-  console.log(response)
 
   expect(response.status).toBe(201)
   expect(response.body.error).toBeFalsy()
