@@ -7,6 +7,7 @@
     "start": "tsx src/server.ts",
     "start:dev": "tsx watch src/server.ts",
     "build": "tsup src",
+    "test": "jest",
     "test:unit": "jest --config jest.unit.config.ts",
     "test:e2e": "jest --config jest.e2e.config.ts --forceExit"
   },

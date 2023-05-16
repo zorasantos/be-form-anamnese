@@ -1,6 +1,22 @@
-import { app } from '@infra/ports/express'
-// import { app } from '../../../../../infra/ports/express'
-import request from 'supertest'
+import 'dotenv/config'
+import {
+  createAppSupertestAdapter,
+  appServer,
+} from '@infra/adapters/supertestAdapter'
+// import {
+//   createExpressAdapter,
+//   createFastifyAdapter,
+// } from '@infra/adapters/appAdapter'
+
+import { app as expressApp } from '@infra/ports/express'
+// import { app as fastifyApp } from '@infra/ports/fastify'
+
+// const serverType = process.env.SERVER_TYPE || 'express'
+
+// const adapter =
+//   serverType === 'fastify'
+//     ? createFastifyAdapter(fastifyApp)
+//     : createExpressAdapter(expressApp)
 
 const data = {
   name: 'Zora',
@@ -18,9 +34,28 @@ const data = {
   zipCode: '60310500',
 }
 
-test('Create Personal Data', async () => {
-  const response = await request(app).post('/form/personal').send(data)
+describe('Personal data', () => {
+  let closeServer: any
+  beforeEach(async () => {
+    const server = expressApp.listen(3001, () => {
+      console.log(`Express server Running in port ${3001}`)
+    })
 
-  expect(response.status).toBe(201)
-  expect(response.body.error).toBeFalsy()
+    closeServer = server
+  })
+
+  afterEach(async () => {
+    await closeServer.close()
+  })
+
+  test('Create Personal Data', async () => {
+    // const response = await request(app).post('/form/personal').send(data)
+    console.log('appServer', appServer)
+
+    const response = await createAppSupertestAdapter()
+      .post('/form/personal')
+      .send(data)
+    expect(response.status).toBe(201)
+    expect(response.body.error).toBeFalsy()
+  })
 })
