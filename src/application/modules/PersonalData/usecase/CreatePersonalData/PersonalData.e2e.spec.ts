@@ -1,6 +1,4 @@
-import request from 'supertest'
-
-import { app as fastifyApp } from '@infra/ports/fastify'
+import { adapter, customSupertestRequest } from '@infra/adapters/appAdapter'
 
 const data = {
   name: 'Zora',
@@ -20,18 +18,15 @@ const data = {
 
 describe('Personal data', () => {
   beforeEach(() => {
-    fastifyApp.listen()
+    adapter.listen()
   })
 
   afterEach(() => {
-    fastifyApp.close()
+    adapter.close()
   })
   test('Create Personal Data', async () => {
-    // const response = await request(app).post('/form/personal').send(data)
+    const response = await customSupertestRequest.post('/form/personal', data)
 
-    const response = await request(fastifyApp.server)
-      .post('/form/personal')
-      .send(data)
     expect(response.status).toBe(201)
     expect(response.body.error).toBeFalsy()
   })
