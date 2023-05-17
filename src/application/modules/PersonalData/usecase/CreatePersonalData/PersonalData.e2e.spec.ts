@@ -1,4 +1,4 @@
-import { adapter, customSupertestRequest } from '@infra/adapters/appAdapter'
+import { adapter, CustomSupertestRequest } from '@infra/adapters/appAdapter'
 
 const data = {
   name: 'Zora',
@@ -17,17 +17,26 @@ const data = {
 }
 
 describe('Personal data', () => {
-  beforeEach(() => {
-    adapter.listen()
+  beforeAll(async () => {
+    await adapter.listen()
   })
 
-  afterEach(() => {
-    adapter.close()
+  afterAll(async () => {
+    await adapter.close()
   })
   test('Create Personal Data', async () => {
-    const response = await customSupertestRequest.post('/form/personal', data)
-
+    const response = await CustomSupertestRequest.post('/form/personal', data)
     expect(response.status).toBe(201)
     expect(response.body.error).toBeFalsy()
+  })
+
+  test('Should be able to return an error if the name field is not provided.', async () => {
+    const newData = { ...data, name: '' }
+    const response = await CustomSupertestRequest.post(
+      '/form/personal',
+      newData,
+    )
+    expect(response.status).toBe(400)
+    expect(response.body.message).toEqual('Name field cannot be empty!')
   })
 })

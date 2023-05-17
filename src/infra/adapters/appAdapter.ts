@@ -1,7 +1,7 @@
 import 'dotenv/config'
 import request from 'supertest'
-import { startServer } from '@infra/ports/fastify'
 import { appExpress, closeAppExpress } from '@infra/ports/express'
+import { FastifyTestServer } from '@shared/helper/instanceTest'
 
 const serverType = process.env.SERVER_TYPE
 
@@ -17,21 +17,19 @@ export class ExpressAdapterIntegrationTest {
 
 export class FastifyAdapterIntegrationTest {
   static async listen() {
-    const app = await startServer()
-    return app.server
+    const app = await FastifyTestServer.createInstance()
+    return app
   }
 
   static async close() {
-    const app = await startServer()
-    closeAppExpress.close()
-    return app.close()
+    await FastifyTestServer.closeInstance()
   }
 }
 
-export class customSupertestRequest {
+export class CustomSupertestRequest {
   private static async getAppInstance() {
-    const server = await startServer()
-    return serverType === 'express' ? appExpress : server.server
+    const app = await FastifyTestServer.createInstance()
+    return serverType === 'express' ? appExpress : app.server
   }
 
   static async post(url: string, data: any) {
