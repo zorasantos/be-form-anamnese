@@ -3,7 +3,7 @@ import { IPersonalDataRepository } from '@application/modules/PersonalData/repos
 import { PrismaPersonalDataMapper } from '../../mappers/prismaPersonalDataMapper'
 import { prismaClient } from '../../prismaClient'
 
-export class PersonalDataRepository implements IPersonalDataRepository {
+export class PrismaPersonalDataRepository implements IPersonalDataRepository {
   async create(data: PersonalData): Promise<void> {
     const raw = PrismaPersonalDataMapper.toPrisma(data)
     await prismaClient.personalData.create({
