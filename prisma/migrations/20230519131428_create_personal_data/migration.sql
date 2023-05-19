@@ -1,6 +1,6 @@
 -- CreateTable
 CREATE TABLE "PersonalData" (
-    "id" TEXT NOT NULL,
+    "_id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "birthday" TEXT NOT NULL,
     "gender" TEXT NOT NULL,
@@ -17,5 +17,5 @@ CREATE TABLE "PersonalData" (
     "createdAt" TIMESTAMP(3) NOT NULL,
     "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    CONSTRAINT "PersonalData_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "PersonalData_pkey" PRIMARY KEY ("_id")
 );
