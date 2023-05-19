@@ -1,8 +1,27 @@
+import Table from 'cli-table3'
+import chalk from 'chalk'
+
+const table = new Table({
+  head: [
+    chalk.cyan('Server'),
+    chalk.cyan('Port'),
+    chalk.cyan('Database'),
+    chalk.cyan('ORM'),
+    chalk.cyan('Environment'),
+  ],
+})
+
 export const logApplicationInfo = async (PORT: number) => {
   const server = process.env.SERVER_TYPE as string
   const serverName = server[0].toUpperCase() + server.substring(1)
-  console.log(`Servidor: ${serverName} server Running in port ${PORT}`)
-  console.log(`Banco de Dados: ${process.env.DATA_BASE}`)
-  console.log(`ORM: ${process.env.REPOSITORY_TYPE}`)
-  console.log(`Ambiente: ${process.env.NODE_ENV}`)
+
+  table.push([
+    serverName,
+    process.env.PORT_SERVER,
+    process.env.DATABASE,
+    process.env.REPOSITORY_TYPE,
+    process.env.NODE_ENV,
+  ])
+
+  console.log(table.toString())
 }
