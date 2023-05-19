@@ -11,7 +11,7 @@ const table = new Table({
   ],
 })
 
-export const logApplicationInfo = async (PORT: number) => {
+export const logApplicationInfo = async () => {
   const server = process.env.SERVER_TYPE as string
   const serverName = server[0].toUpperCase() + server.substring(1)
 
