@@ -1,4 +1,7 @@
-import { adapter, CustomSupertestRequest } from '@infra/adapters/appAdapter'
+import {
+  adapter,
+  CustomSupertestRequest,
+} from '@infra/adapters/testIntegrationAdapter'
 
 const data = {
   name: 'Zora',
@@ -24,8 +27,11 @@ describe('Personal data', () => {
   afterAll(async () => {
     await adapter.close()
   })
-  test('Create Personal Data', async () => {
-    const response = await CustomSupertestRequest.post('/form/personal', data)
+  test('Should be able to create new personal data successfully', async () => {
+    const response = await CustomSupertestRequest.post(
+      '/v1/form/personal',
+      data,
+    )
     expect(response.status).toBe(201)
     expect(response.body.error).toBeFalsy()
   })
@@ -33,7 +39,7 @@ describe('Personal data', () => {
   test('Should be able to return an error if the name field is not provided.', async () => {
     const newData = { ...data, name: '' }
     const response = await CustomSupertestRequest.post(
-      '/form/personal',
+      '/v1/form/personal',
       newData,
     )
     expect(response.status).toBe(400)

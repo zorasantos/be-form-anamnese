@@ -6,8 +6,8 @@ import type { Config } from 'jest'
 
 const testEnvironment =
   process.env.DATABASE_TYPE === 'postgres'
-    ? './prisma/prisma-test-env.ts'
-    : './prisma/mongo-test-env.ts'
+    ? './src/infra/database/prisma/prisma-test-env.ts'
+    : './src/infra/database/prisma/mongo-test-env.ts'
 
 export default async (): Promise<Config> => {
   return {
