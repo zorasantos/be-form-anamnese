@@ -1,11 +1,12 @@
 import 'dotenv/config'
 import fastify from 'fastify'
-import { root } from '../../routes/fastify'
+import { personalDataRouter } from '../../routes/fastify'
 
 const app = fastify({ logger: true })
 
 const startServer = () => {
-  app.register(root)
+  app.register(personalDataRouter, { prefix: '/v1' })
+
   return app
 }
 

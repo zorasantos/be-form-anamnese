@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from 'express'
-import { FastifyRequest, FastifyReply } from 'fastify'
 
 import { AnyZodObject, ZodError } from 'zod'
 
@@ -7,13 +6,9 @@ function getZodErrorMessage(error: ZodError): string {
   return error.issues.map((issue) => issue.message).join('\n')
 }
 
-export const validateSchema =
+export const validateSchemaExpress =
   (schema: AnyZodObject) =>
-  async (
-    req: Request | FastifyRequest,
-    res: Response | FastifyReply,
-    next: NextFunction,
-  ) => {
+  async (req: Request, res: Response, next: NextFunction) => {
     try {
       await schema.parseAsync({
         body: req.body,

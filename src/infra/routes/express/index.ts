@@ -4,6 +4,6 @@ import { personalRoutes } from './personal.routes'
 
 const router = Router()
 
-router.use('/form', personalRoutes)
+router.use('/v1/form', personalRoutes)
 
 export { router }
