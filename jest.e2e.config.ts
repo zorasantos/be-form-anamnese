@@ -1,7 +1,13 @@
+import 'dotenv/config'
 import { pathsToModuleNameMapper } from 'ts-jest'
 import { compilerOptions } from './tsconfig.json'
 
 import type { Config } from 'jest'
+
+const testEnvironment =
+  process.env.DATABASE_TYPE === 'postgres'
+    ? './prisma/prisma-test-env.ts'
+    : './prisma/mongo-test-env.ts'
 
 export default async (): Promise<Config> => {
   return {
@@ -16,7 +22,7 @@ export default async (): Promise<Config> => {
     cache: false,
     passWithNoTests: true,
     testRegex: '.e2e.spec.ts$',
-    testEnvironment: './prisma/prisma-test-env.ts',
+    testEnvironment,
     testPathIgnorePatterns: ['/node_modules/', '/coverage/'],
     moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
       prefix: '<rootDir>/src/',
