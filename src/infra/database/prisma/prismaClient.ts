@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client'
+const isOrmPrisma = process.env.ORM_TYPE
 
 export const prismaClient = new PrismaClient({
   log: ['error', 'info', 'query', 'warn'],
@@ -14,4 +15,7 @@ async function checkDatabaseConnection() {
     await prismaClient.$disconnect()
   }
 }
-checkDatabaseConnection()
+
+if (isOrmPrisma === 'prisma') {
+  checkDatabaseConnection()
+}
