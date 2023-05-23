@@ -2,7 +2,7 @@ import { create } from '@shared/helper/httpHelper'
 import { IController } from '@shared/protocols/controller'
 import { HttpRequest, HttpResponse } from '@shared/protocols/http'
 import { CreatePersonalDataUseCase } from './CreatePersonalDataUseCase'
-import { IPersonalDataProps } from '../../Entities/PersonalData'
+import { IPersonalDataProps } from '../../entities/PersonalData'
 
 interface IPersonalDataRequest extends IPersonalDataProps {}
 

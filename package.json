@@ -9,6 +9,7 @@
     "prisma:generate": "npx prisma generate --schema=./src/infra/database/prisma/schema.prisma",
     "prisma:migrate": "prisma migrate dev --schema=./src/infra/database/prisma/schema.prisma",
     "prisma:studio": "prisma studio --schema=./src/infra/database/prisma/schema.prisma",
+    "typeorm:migration:run": "npx typeorm-ts-node-commonjs migration:run -d  ./src/infra/database/typeorm/typeormClient.ts",
     "build": "tsup src",
     "test": "jest",
     "test:unit": "jest --config jest.unit.config.ts",

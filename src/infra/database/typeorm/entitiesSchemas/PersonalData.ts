@@ -1,6 +1,7 @@
+import { PersonalData } from '@application/modules/PersonalData/entities/PersonalData'
 import { EntitySchema } from 'typeorm'
 
-export const PersonSchema = new EntitySchema({
+export const PersonalDataEntitySchema = new EntitySchema<PersonalData>({
   name: 'personalData',
   columns: {
     id: {

@@ -1,5 +1,5 @@
 // import { PersonalData as RawPersonalData } from '@prisma/client';
-import { PersonalData } from '@application/modules/PersonalData/Entities/PersonalData'
+import { PersonalData } from '@application/modules/PersonalData/entities/PersonalData'
 
 export class PrismaPersonalDataMapper {
   static toPrisma(data: PersonalData) {

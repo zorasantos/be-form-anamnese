@@ -19,7 +19,7 @@ export const logApplicationInfo = async () => {
     serverName,
     process.env.PORT_SERVER,
     process.env.DATABASE,
-    process.env.REPOSITORY_TYPE,
+    process.env.ORM_TYPE,
     process.env.NODE_ENV,
   ])
 

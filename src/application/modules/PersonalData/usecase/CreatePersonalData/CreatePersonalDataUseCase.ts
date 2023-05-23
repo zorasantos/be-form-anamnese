@@ -1,4 +1,4 @@
-import { IPersonalDataProps, PersonalData } from '../../Entities/PersonalData'
+import { IPersonalDataProps, PersonalData } from '../../entities/PersonalData'
 import { IPersonalDataRepository } from '../../repository/IPersonalDataRepository'
 
 interface IPersonalDataRequest extends IPersonalDataProps {}

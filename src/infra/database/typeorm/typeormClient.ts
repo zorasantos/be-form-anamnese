@@ -1,4 +1,5 @@
 import { DataSource } from 'typeorm'
+import { PersonalDataEntitySchema } from './entitiesSchemas/PersonalData'
 const isOrmPrisma = process.env.ORM_TYPE
 
 const AppDataSource = new DataSource({
@@ -8,6 +9,9 @@ const AppDataSource = new DataSource({
   username: 'postgres',
   password: 'postgres',
   database: 'anamnese',
+  synchronize: true,
+  entities: [PersonalDataEntitySchema],
+  migrations: ['./migrations/*.ts'],
 })
 
 const typeormDatabaseConnection = async () => {

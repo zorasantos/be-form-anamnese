@@ -1,4 +1,4 @@
-import { PersonalData } from '@application/modules/PersonalData/Entities/PersonalData'
+import { PersonalData } from '@application/modules/PersonalData/entities/PersonalData'
 import { IPersonalDataRepository } from '@application/modules/PersonalData/repository/IPersonalDataRepository'
 import { PrismaPersonalDataMapper } from '../../mappers/prismaPersonalDataMapper'
 import { prismaClient } from '../../prismaClient'
