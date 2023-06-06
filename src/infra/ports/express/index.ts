@@ -1,6 +1,7 @@
 import 'dotenv/config'
 import express from 'express'
 import { router } from '../../routes/express'
+import cors from 'cors'
 
 const APP_PORT = process.env.PORT_SERVER
 const TEST_PORT = 5001
@@ -10,6 +11,7 @@ const appExpress = express()
 
 appExpress.disable('x-powered-by')
 
+appExpress.use(cors())
 appExpress.use(express.json())
 appExpress.use(router)
 

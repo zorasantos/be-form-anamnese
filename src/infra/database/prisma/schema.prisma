@@ -19,10 +19,12 @@ model PersonalData {
   zipCode        String
   street         String
   number         String
-  addressDetails String
+  addressDetails String?
   neighborhood   String
   city           String
   state          String
   createdAt      DateTime
   updatedAt      DateTime @default(now())
+
+  @@map("personalData")
 }

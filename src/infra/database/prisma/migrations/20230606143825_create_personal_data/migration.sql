@@ -1,5 +1,5 @@
 -- CreateTable
-CREATE TABLE "PersonalData" (
+CREATE TABLE "personalData" (
     "_id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "birthday" TEXT NOT NULL,
@@ -10,12 +10,12 @@ CREATE TABLE "PersonalData" (
     "zipCode" TEXT NOT NULL,
     "street" TEXT NOT NULL,
     "number" TEXT NOT NULL,
-    "addressDetails" TEXT NOT NULL,
+    "addressDetails" TEXT,
     "neighborhood" TEXT NOT NULL,
     "city" TEXT NOT NULL,
     "state" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL,
     "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    CONSTRAINT "PersonalData_pkey" PRIMARY KEY ("_id")
+    CONSTRAINT "personalData_pkey" PRIMARY KEY ("_id")
 );

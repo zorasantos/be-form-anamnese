@@ -10,7 +10,7 @@ export interface IPersonalDataProps {
   zipCode: string
   street: string
   number: string
-  addressDetails: string
+  addressDetails?: string
   neighborhood: string
   city: string
   state: string
@@ -105,11 +105,11 @@ export class PersonalData {
     return this.props.number
   }
 
-  public set addressDetails(addressDetails: string) {
+  public set addressDetails(addressDetails: string | undefined) {
     this.props.addressDetails = addressDetails
   }
 
-  public get addressDetails(): string {
+  public get addressDetails(): string | undefined {
     return this.props.addressDetails
   }
 

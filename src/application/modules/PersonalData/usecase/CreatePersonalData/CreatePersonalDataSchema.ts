@@ -19,7 +19,9 @@ export const personalDataSchema = z.object({
       zipCode: fieldSchema('Zip code'),
       street: fieldSchema('Street'),
       number: fieldSchema('Number'),
-      addressDetails: fieldSchema('Address details'),
+      addressDetails: z.string(
+        customMsgSchemaValidation('Address detail', 'string'),
+      ),
       neighborhood: fieldSchema('Neighborhood'),
       city: fieldSchema('City'),
       state: fieldSchema('State'),
