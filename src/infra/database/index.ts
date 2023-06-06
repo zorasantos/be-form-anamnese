@@ -1,5 +1,8 @@
 import { PrismaPersonalDataRepository } from './prisma/repositories/PersonalData/PrismaPersonalDataRepository'
+import { PrismaDifficultiesAndObjectivesRepository } from './prisma/repositories/DifficultiesAndObjectives/PrismaDifficultiesAndObjectivesRepository'
 
-const repository = new PrismaPersonalDataRepository()
+const personalDataRepository = new PrismaPersonalDataRepository()
+const difficultiesAndObjectivesRepository =
+  new PrismaDifficultiesAndObjectivesRepository()
 
-export { repository }
+export { personalDataRepository, difficultiesAndObjectivesRepository }

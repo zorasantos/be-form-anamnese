@@ -1,6 +1,6 @@
 -- CreateTable
 CREATE TABLE "personalData" (
-    "_id" TEXT NOT NULL,
+    "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "birthday" TEXT NOT NULL,
     "gender" TEXT NOT NULL,
@@ -17,5 +17,18 @@ CREATE TABLE "personalData" (
     "createdAt" TIMESTAMP(3) NOT NULL,
     "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    CONSTRAINT "personalData_pkey" PRIMARY KEY ("_id")
+    CONSTRAINT "personalData_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "difficultiesAndObjectives" (
+    "id" TEXT NOT NULL,
+    "difficultFirst" TEXT NOT NULL,
+    "difficultSecond" TEXT,
+    "difficultThird" TEXT,
+    "objective" TEXT,
+    "createdAt" TIMESTAMP(3) NOT NULL,
+    "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "difficultiesAndObjectives_pkey" PRIMARY KEY ("id")
 );

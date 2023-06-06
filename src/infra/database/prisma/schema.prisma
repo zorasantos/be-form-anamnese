@@ -9,7 +9,7 @@ datasource db {
 }
 
 model PersonalData {
-  id             String   @id @default(uuid()) @map("_id")
+  id             String   @id @default(uuid())
   name           String
   birthday       String
   gender         String
@@ -27,4 +27,16 @@ model PersonalData {
   updatedAt      DateTime @default(now())
 
   @@map("personalData")
+}
+
+model DifficultiesAndObjectives {
+  id              String   @id @default(uuid())
+  difficultFirst  String
+  difficultSecond String?
+  difficultThird  String?
+  objective       String?
+  createdAt       DateTime
+  updatedAt       DateTime @default(now())
+
+  @@map("difficultiesAndObjectives")
 }
