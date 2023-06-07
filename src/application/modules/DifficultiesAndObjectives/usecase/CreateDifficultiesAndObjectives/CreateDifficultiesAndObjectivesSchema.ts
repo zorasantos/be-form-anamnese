@@ -20,7 +20,7 @@ export const difficultiesAndObjectivesSchema = z.object({
       objective: z.string(customMsgSchemaValidation('Objective', 'string')),
     })
     .nonstrict()
-    .refine((data) => Object.keys(data).length <= 13, {
+    .refine((data) => Object.keys(data).length <= 4, {
       message: 'Unexpected properties found in request body',
     }),
 })
