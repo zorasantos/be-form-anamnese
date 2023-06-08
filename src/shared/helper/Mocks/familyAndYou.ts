@@ -1,0 +1,40 @@
+import { IFamilyAndYouProps } from '@application/modules/FamilyAndYou/Entities/FamilyAndYou'
+
+export const familyAndYouData: IFamilyAndYouProps = {
+  personalDataId: 'aaaf862a-a01e-4a3a-95d8-ee3b3b85e5e1',
+  placeOfBirth: 'Zora',
+  fatherAge: undefined,
+  fatherDeathAge: undefined,
+  ageWhenFatherDied: undefined,
+  fatherOccupation: '',
+  fatherDescription: '',
+  motherAge: undefined,
+  motherDeathAge: undefined,
+  ageWhenMotherDied: undefined,
+  motherOccupation: '',
+  motherDescription: '',
+  problemsWithParents: '',
+  relationshipBrothers: '',
+  atmosphereHome: '',
+  importantChanges: '',
+  anyoneImportantForMe: '',
+  psychiatricTreatment: undefined,
+  historyOfMentalIllness: undefined,
+  member: [
+    { name: 'Zora', problem: 'Teste' },
+    { name: 'Zora', problem: 'Teste' },
+  ],
+  children: [
+    {
+      name: 'zora',
+      occupation: '',
+      age: 37,
+      gender: 'M',
+      comments: '',
+    },
+  ],
+  anyMemberFamilySuicideAttempt: undefined,
+  anyMemberFamilyDiedBySuicide: undefined,
+  manyChildrenThereInFamily: undefined,
+  botherYou: '',
+}

@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   database:
-    image: postgres:14-alpine
+    image: postgres:14
     container_name: db_form_anamnese
     restart: always
     ports:
