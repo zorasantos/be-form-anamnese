@@ -5,6 +5,7 @@ export class PrismaDifficultiesAndObjectivesMapper {
   static toPrisma(data: DifficultiesAndObjectives) {
     return {
       id: data.id,
+      personalDataId: data.personalDataId,
       difficultFirst: data.difficultFirst,
       difficultSecond: data.difficultSecond,
       difficultThird: data.difficultThird,

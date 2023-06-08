@@ -9,7 +9,7 @@ datasource db {
 }
 
 model PersonalData {
-  id             String   @id @default(uuid())
+  id             String                      @id @default(uuid())
   name           String
   birthday       String
   gender         String
@@ -23,20 +23,86 @@ model PersonalData {
   neighborhood   String
   city           String
   state          String
+  family         FamilyAndYou[]
+  dfficult       DifficultiesAndObjectives[]
   createdAt      DateTime
-  updatedAt      DateTime @default(now())
+  updatedAt      DateTime                    @default(now())
 
   @@map("personalData")
 }
 
 model DifficultiesAndObjectives {
-  id              String   @id @default(uuid())
+  id              String       @id @default(uuid())
   difficultFirst  String
   difficultSecond String?
   difficultThird  String?
   objective       String?
   createdAt       DateTime
-  updatedAt       DateTime @default(now())
+  updatedAt       DateTime     @default(now())
+  personalData    PersonalData @relation(fields: [personalDataId], references: [id])
+  personalDataId  String
 
   @@map("difficultiesAndObjectives")
+}
+
+model ChildrenList {
+  id         String       @id @default(uuid())
+  name       String
+  occupation String?
+  age        Int?
+  gender     String?
+  comments   String?
+  family     FamilyAndYou @relation(fields: [familyId], references: [id])
+  familyId   String
+  createdAt  DateTime
+  updatedAt  DateTime     @default(now())
+
+  @@map("childrenList")
+}
+
+model MembersWithOfMentalIllness {
+  id        String       @id @default(uuid())
+  name      String
+  problems  String
+  family    FamilyAndYou @relation(fields: [familyId], references: [id])
+  familyId  String
+  createdAt DateTime
+  updatedAt DateTime     @default(now())
+
+  @@map("membersWithOfMentalIllness")
+}
+
+model FamilyAndYou {
+  id                            String                       @id @default(uuid())
+  placeOfBirth                  String
+  fatherAge                     Int?
+  fatherDeathAge                Int?
+  ageWhenFatherDied             Int?
+  fatherOccupation              String?
+  fatherDescription             String?
+  motherAge                     Int?
+  motherDeathAge                Int?
+  ageWhenMotherDied             Int?
+  motherOccupation              String?
+  motherDescription             String?
+  problemsWithParents           String?
+  relationshipBrothers          String?
+  atmosphereHome                String?
+  importantChanges              String?
+  anyoneImportantForMe          String?
+  psychiatricTreatment          Int?
+  historyOfMentalIllness        Int?
+  childrenId                    String?
+  anyMemberFamilySuicideAttempt Int?
+  anyMemberFamilyDiedBySuicide  Int?
+  manyChildrenThereInFamily     Int?
+  botherYou                     String?
+  createdAt                     DateTime
+  updatedAt                     DateTime                     @default(now())
+  personalData                  PersonalData                 @relation(fields: [personalDataId], references: [id])
+  personalDataId                String
+  children                      ChildrenList[]
+  member                        MembersWithOfMentalIllness[]
+
+  @@map("familyAndYou")
 }

@@ -6,6 +6,7 @@ describe('Difficulties And Objectives', () => {
     const repository = new InMemoryDifficultiesAndObjectivesRepository()
     const difficultData = new CreateDifficultiesAndObjectivesUseCase(repository)
     const data = {
+      personalDataId: 'aaaf862a-a01e-4a3a-95d8-ee3b3b85e5e1',
       difficultFirst: 'Só primeira dificuldade',
       difficultSecond: 'Segunda dificuldade',
       difficultThird: 'Terceira dificuldade',

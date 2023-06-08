@@ -10,6 +10,7 @@ const fieldSchema = (fieldName: string) => {
 export const difficultiesAndObjectivesSchema = z.object({
   body: z
     .object({
+      personalDataId: fieldSchema('Personal data id'),
       difficultFirst: fieldSchema('Difficult first'),
       difficultSecond: z.string(
         customMsgSchemaValidation('Difficult Second', 'string'),
@@ -20,7 +21,7 @@ export const difficultiesAndObjectivesSchema = z.object({
       objective: z.string(customMsgSchemaValidation('Objective', 'string')),
     })
     .nonstrict()
-    .refine((data) => Object.keys(data).length <= 4, {
+    .refine((data) => Object.keys(data).length <= 5, {
       message: 'Unexpected properties found in request body',
     }),
 })

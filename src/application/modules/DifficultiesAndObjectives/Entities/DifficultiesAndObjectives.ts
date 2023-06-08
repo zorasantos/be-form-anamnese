@@ -1,6 +1,7 @@
 import { randomUUID } from 'node:crypto'
 
 export interface IDifficultiesAndObjectives {
+  personalDataId: string
   difficultFirst: string
   difficultSecond?: string
   difficultThird?: string
@@ -22,6 +23,14 @@ export class DifficultiesAndObjectives {
 
   public get id() {
     return this._id
+  }
+
+  public set personalDataId(personalDataId: string) {
+    this.props.personalDataId = personalDataId
+  }
+
+  public get personalDataId(): string {
+    return this.props.personalDataId
   }
 
   public set difficultFirst(difficultFirst: string) {

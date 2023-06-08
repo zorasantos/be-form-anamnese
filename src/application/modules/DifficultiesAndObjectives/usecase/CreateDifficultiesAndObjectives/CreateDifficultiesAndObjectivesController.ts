@@ -13,10 +13,16 @@ export class CreateDifficultiesAndObjectivesController implements IController {
   ) {}
 
   async handle(request: HttpRequest): Promise<HttpResponse> {
-    const { difficultFirst, difficultSecond, difficultThird, objective } =
-      request.body as IDifficultiesAndObjectivesRequest
+    const {
+      difficultFirst,
+      difficultSecond,
+      difficultThird,
+      objective,
+      personalDataId,
+    } = request.body as IDifficultiesAndObjectivesRequest
 
     const data = {
+      personalDataId,
       difficultFirst,
       difficultSecond,
       difficultThird,

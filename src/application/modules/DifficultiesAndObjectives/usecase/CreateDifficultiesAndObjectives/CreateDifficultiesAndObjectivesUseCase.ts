@@ -11,9 +11,15 @@ export class CreateDifficultiesAndObjectivesUseCase {
   constructor(private repository: IDifficultiesAndObjectivesRepository) {}
 
   async execute(request: IDifficultiesAndObjectivesRequest): Promise<void> {
-    const { difficultFirst, difficultSecond, difficultThird, objective } =
-      request
+    const {
+      difficultFirst,
+      difficultSecond,
+      difficultThird,
+      objective,
+      personalDataId,
+    } = request
     const data = new DifficultiesAndObjectives({
+      personalDataId,
       difficultFirst,
       difficultSecond,
       difficultThird,
