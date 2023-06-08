@@ -21,9 +21,11 @@
     "@babel/preset-env": "^7.21.5",
     "@babel/preset-typescript": "^7.21.5",
     "@rocketseat/eslint-config": "^1.2.0",
+    "@types/bcrypt": "^5.0.0",
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
     "@types/jest": "^29.5.1",
+    "@types/jsonwebtoken": "^9.0.2",
     "@types/node": "^18.15.13",
     "@types/pg": "^8.6.6",
     "@types/supertest": "^2.0.12",
@@ -42,12 +44,14 @@
   },
   "dependencies": {
     "@prisma/client": "4.13.0",
+    "bcrypt": "^5.1.0",
     "chalk": "^5.2.0",
     "cli-table3": "^0.6.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "fastify": "^4.15.0",
+    "jsonwebtoken": "^9.0.0",
     "zod": "^3.21.4"
   }
 }
