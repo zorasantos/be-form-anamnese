@@ -1,7 +1,7 @@
 import { IPersonalDataProps } from '@application/modules/PersonalData/Entities/PersonalData'
 
 export const personalData: IPersonalDataProps = {
-  name: 'Zora',
+  name: 'Integrate Test',
   addressDetails: 'Ap 5',
   birthday: '09/11/2016',
   city: 'Fortaleza',
