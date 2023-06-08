@@ -12,7 +12,7 @@ export default async (): Promise<Config> => {
     coverageProvider: 'v8',
     detectOpenHandles: true,
     preset: 'ts-jest',
-    silent: true,
+    silent: false,
     cache: false,
     passWithNoTests: true,
     testRegex: '.unit.spec.ts$',

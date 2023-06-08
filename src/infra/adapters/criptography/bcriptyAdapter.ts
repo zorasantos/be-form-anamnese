@@ -3,8 +3,8 @@ import { IHasher } from '@shared/protocols/criptography/hasher'
 import bcrypt from 'bcrypt'
 
 class BcrypterAdapter implements IHasher, IHashCompare {
-  async hash(value: string): Promise<string> {
-    const hash = await bcrypt.hash(value, 8)
+  hash(value: string): string {
+    const hash = bcrypt.hashSync(value, 8)
     return hash
   }
 
