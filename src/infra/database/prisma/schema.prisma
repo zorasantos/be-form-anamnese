@@ -24,7 +24,7 @@ model PersonalData {
   city           String
   state          String
   family         FamilyAndYou[]
-  dfficult       DifficultiesAndObjectives[]
+  difficult      DifficultiesAndObjectives[]
   createdAt      DateTime
   updatedAt      DateTime                    @default(now())
 
@@ -92,7 +92,6 @@ model FamilyAndYou {
   anyoneImportantForMe          String?
   psychiatricTreatment          Int?
   historyOfMentalIllness        Int?
-  childrenId                    String?
   anyMemberFamilySuicideAttempt Int?
   anyMemberFamilyDiedBySuicide  Int?
   manyChildrenThereInFamily     Int?

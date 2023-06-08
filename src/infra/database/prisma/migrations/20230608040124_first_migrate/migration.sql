@@ -82,7 +82,6 @@ CREATE TABLE "familyAndYou" (
     "anyoneImportantForMe" TEXT,
     "psychiatricTreatment" INTEGER,
     "historyOfMentalIllness" INTEGER,
-    "childrenId" TEXT,
     "anyMemberFamilySuicideAttempt" INTEGER,
     "anyMemberFamilyDiedBySuicide" INTEGER,
     "manyChildrenThereInFamily" INTEGER,
