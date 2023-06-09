@@ -7,4 +7,14 @@ export class InMemorySignUpRepository implements ISignUpRepository {
   async create(data: SignUp): Promise<void> {
     this.signUp.push(data)
   }
+
+  async findUserByName(name: string): Promise<SignUp | null> {
+    const user = this.signUp?.find((item) => item.name === name)
+
+    if (!user) {
+      return null
+    }
+
+    return user
+  }
 }

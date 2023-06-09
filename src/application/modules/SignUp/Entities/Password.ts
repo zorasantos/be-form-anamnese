@@ -1,11 +1,11 @@
-import { BcrypterAdapter } from '@infra/adapters/criptography/bcriptyAdapter'
+import { EncryptAdapter } from '@infra/adapters/cryptography/encryptAdapter'
 
 export class Password {
   private password: string
 
   private encryptPassword(password: string) {
-    const bcryptAdapter = new BcrypterAdapter()
-    const passwordWhitHash = bcryptAdapter.hash(password)
+    const encryptAdapter = new EncryptAdapter()
+    const passwordWhitHash = encryptAdapter.hash(password)
     return passwordWhitHash
   }
 

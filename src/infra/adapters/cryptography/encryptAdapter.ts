@@ -1,8 +1,7 @@
-import { IHashCompare } from '@shared/protocols/criptography/hashCompare'
-import { IHasher } from '@shared/protocols/criptography/hasher'
+import { IEncryptAdapter } from '@shared/protocols/cryptography/IEncryptAdapter'
 import bcrypt from 'bcrypt'
 
-class BcrypterAdapter implements IHasher, IHashCompare {
+export class EncryptAdapter implements IEncryptAdapter {
   hash(value: string): string {
     const hash = bcrypt.hashSync(value, 8)
     return hash
@@ -13,5 +12,3 @@ class BcrypterAdapter implements IHasher, IHashCompare {
     return result
   }
 }
-
-export { BcrypterAdapter }
