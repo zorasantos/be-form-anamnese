@@ -5,6 +5,7 @@ import { IAuthTokenAdapter } from '@shared/protocols/cryptography/IAuthTokenAdap
 interface ISignInRequest {
   name: string
   password: string
+  term: boolean
 }
 
 export interface ISignInResponse {
@@ -14,6 +15,8 @@ export interface ISignInResponse {
 interface IPayload {
   name: string
   userId: string
+  profile: string
+  term: boolean
 }
 
 export class SignInUseCase {
@@ -24,11 +27,9 @@ export class SignInUseCase {
   ) {}
 
   async execute(request: ISignInRequest): Promise<ISignInResponse> {
-    const { name, password } = request
+    const { name, password, term } = request
     const user = await this.repository.findUserByName(name)
     const myPassword = user?.password.toString() as string
-
-    console.log('user', user, myPassword)
 
     if (!user) {
       throw new Error('Email or password incorrect!')
@@ -43,9 +44,21 @@ export class SignInUseCase {
       throw new Error('Email or password incorrect!')
     }
 
+    if (!user.term) {
+      if (term) {
+        await this.repository.updateTerm(term, user.id)
+      } else {
+        throw new Error('Accept terms is required!')
+      }
+    }
+
+    const getTerm = await this.repository.findUserByName(name)
+
     const payload: IPayload = {
       userId: user.id,
       name: user.name,
+      profile: user.profile,
+      term: getTerm?.term as boolean,
     }
 
     const token = this.authToken.generateToken(payload, user.id as string, '1d')

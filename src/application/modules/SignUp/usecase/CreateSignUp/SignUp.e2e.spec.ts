@@ -10,6 +10,7 @@ describe('Sign Up', () => {
     name: 'Test Name',
     birthday: '01/01/1987',
     password: '1234567890',
+    profile: 'USER',
   }
   test('Should be able to create a new Sign Up successfully', async () => {
     const response = await request(appExpress)

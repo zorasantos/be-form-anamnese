@@ -5,18 +5,21 @@ export interface ISignUpProps {
   name: string
   birthday: string
   password: Password
+  profile: string
 }
 
 export class SignUp {
   private _id: string
   private _createdAt: Date
   private _updatedAt: Date
+  private _term: boolean
   private props: ISignUpProps
 
   constructor(props: ISignUpProps, id?: string) {
     this._id = id ?? randomUUID()
     this._createdAt = new Date()
     this._updatedAt = new Date()
+    this._term = false
     this.props = props
   }
 
@@ -46,6 +49,22 @@ export class SignUp {
 
   public get password(): Password {
     return this.props.password
+  }
+
+  public set profile(profile: string) {
+    this.props.profile = profile
+  }
+
+  public get profile(): string {
+    return this.props.profile
+  }
+
+  public set term(term: boolean) {
+    this._term = term
+  }
+
+  public get term(): boolean {
+    return this._term
   }
 
   public get createdAt(): Date {

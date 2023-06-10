@@ -7,6 +7,8 @@ export class PrismaSignUpMapper {
       name: data.name,
       birthday: data.birthday,
       password: data.password.value,
+      profile: data.profile,
+      term: data.term,
       createdAt: data.createdAt,
       updatedAt: data.updatedAt,
     }

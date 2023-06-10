@@ -6,17 +6,19 @@ import { SignInUseCase } from './SignInUseCase'
 interface ISignInDTO {
   name: string
   password: string
+  term: boolean
 }
 
 export class SignInController implements IController {
   constructor(private readonly useCase: SignInUseCase) {}
 
   async handle(request: HttpRequest): Promise<HttpResponse> {
-    const { name, password } = request.body as ISignInDTO
+    const { name, password, term } = request.body as ISignInDTO
 
     const data = {
       name,
       password,
+      term,
     }
     const useCase = await this.useCase.execute(data)
     return ok(useCase)

@@ -8,15 +8,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model SignUp {
+model User {
   id        String   @id @default(uuid())
   name      String
   birthday  String
+  profile   String   @default("USER")
+  term      Boolean
   password  String
   createdAt DateTime
   updatedAt DateTime @default(now())
 
-  @@map("signUp")
+  @@map("user")
 }
 
 model PersonalData {

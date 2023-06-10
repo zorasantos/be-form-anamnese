@@ -6,13 +6,13 @@ import { SignUp } from '@application/modules/SignUp/Entities/SignUp'
 export class PrismaSignUpRepository implements ISignUpRepository {
   async create(data: SignUp): Promise<void> {
     const raw = PrismaSignUpMapper.toPrisma(data)
-    await prismaClient.signUp.create({
+    await prismaClient.user.create({
       data: raw,
     })
   }
 
   async findUserByName(name: string): Promise<SignUp | null> {
-    const user = await prismaClient.signUp.findFirst({
+    const user = await prismaClient.user.findFirst({
       where: { name },
     })
 
@@ -21,5 +21,16 @@ export class PrismaSignUpRepository implements ISignUpRepository {
     }
 
     return user as unknown as SignUp
+  }
+
+  async updateTerm(term: boolean, userId: string): Promise<void> {
+    await prismaClient.user.update({
+      where: {
+        id: userId,
+      },
+      data: {
+        term,
+      },
+    })
   }
 }

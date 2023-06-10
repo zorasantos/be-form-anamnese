@@ -17,4 +17,8 @@ export class InMemorySignUpRepository implements ISignUpRepository {
 
     return user
   }
+
+  async updateTerm(term: boolean): Promise<void> {
+    console.log(term)
+  }
 }
