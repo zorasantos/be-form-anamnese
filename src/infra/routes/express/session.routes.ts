@@ -1,13 +1,13 @@
 import { Router } from 'express'
 import { adaptRouteExpress } from '../../adapters/expressRouteAdapter'
 import { SignInFactory } from '@application/modules/SignUp/usecase/auth/SignInFactory'
-// import { validateSchemaExpress } from '@infra/adapters/schemas/validateSchemaExpress'
-// import { difficultiesAndObjectivesSchema } from '@application/modules/DifficultiesAndObjectives/usecase/CreateDifficultiesAndObjectives/CreateDifficultiesAndObjectivesSchema'
+import { validateSchemaExpress } from '@infra/adapters/schemas/validateSchemaExpress'
+import { signInSchema } from '@application/modules/SignUp/usecase/auth/SignInSchema'
 const sessionRoutes = Router()
 
 sessionRoutes.post(
   '/session',
-  // validateSchemaExpress(difficultiesAndObjectivesSchema),
+  validateSchemaExpress(signInSchema),
   adaptRouteExpress(SignInFactory()),
 )
 

@@ -1,4 +1,4 @@
-import { ok } from '@shared/helper/httpHelper'
+import { badRequest, ok } from '@shared/helper/httpHelper'
 import { IController } from '@shared/protocols/controller'
 import { HttpRequest, HttpResponse } from '@shared/protocols/http'
 import { SignInUseCase } from './SignInUseCase'
@@ -20,7 +20,10 @@ export class SignInController implements IController {
       password,
       term,
     }
-    const useCase = await this.useCase.execute(data)
-    return ok(useCase)
+    const result = await this.useCase.execute(data)
+
+    if (result.isLeft()) return badRequest(result.value)
+
+    return ok(result.value)
   }
 }

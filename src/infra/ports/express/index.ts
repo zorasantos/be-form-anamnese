@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import express from 'express'
+import express, { NextFunction, Response, Request } from 'express'
 import { router } from '../../routes/express'
 import cors from 'cors'
 
@@ -14,6 +14,14 @@ appExpress.disable('x-powered-by')
 appExpress.use(cors())
 appExpress.use(express.json())
 appExpress.use(router)
+appExpress.use(
+  (err: Error, _req: Request, res: Response, _next: NextFunction) => {
+    return res.status(500).json({
+      status: 'error',
+      message: `Internal server error - ${err.message}`,
+    })
+  },
+)
 
 const server = appExpress.listen(PORT, () => {
   console.log(`Express app listening on port ${PORT}`)

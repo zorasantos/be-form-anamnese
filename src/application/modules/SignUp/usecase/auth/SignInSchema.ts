@@ -1,24 +1,21 @@
 import { customMsgSchemaValidation } from '@shared/helper'
 import { z } from 'zod'
 
-const ProfileEnum = z.enum(['USER', 'ADMIN', ''])
-
 const fieldSchema = (fieldName: string) => {
   return z
     .string(customMsgSchemaValidation(fieldName, 'string'))
     .nonempty({ message: `${fieldName} field cannot be empty!` })
 }
 
-export const signUpSchema = z.object({
+export const signInSchema = z.object({
   body: z
     .object({
       name: fieldSchema('Name'),
-      birthday: fieldSchema('Birthday'),
       password: fieldSchema('Password'),
-      profile: ProfileEnum,
+      term: z.boolean(customMsgSchemaValidation('Term', 'boolean')),
     })
     .nonstrict()
-    .refine((data) => Object.keys(data).length <= 4, {
+    .refine((data) => Object.keys(data).length <= 3, {
       message: 'Unexpected properties found in request body',
     }),
 })

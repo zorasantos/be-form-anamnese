@@ -1,3 +1,4 @@
+import { AppError } from '@shared/errors/AppError'
 import { HttpResponse } from '../protocols/http'
 
 export const create = (data: unknown): HttpResponse => ({
@@ -8,4 +9,9 @@ export const create = (data: unknown): HttpResponse => ({
 export const ok = (data: unknown): HttpResponse => ({
   statusCode: 200,
   body: data,
+})
+
+export const badRequest = (error: AppError): HttpResponse => ({
+  statusCode: error.statusCode,
+  body: error.message,
 })

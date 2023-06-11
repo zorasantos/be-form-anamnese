@@ -38,8 +38,6 @@ export class CreatePersonalDataUseCase {
       state,
     })
 
-    const result = await this.userRepository.create(personalData)
-
-    return result
+    await this.userRepository.create(personalData)
   }
 }

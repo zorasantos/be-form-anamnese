@@ -30,7 +30,7 @@ export class CreateSignUpController implements IController {
       password,
       profile,
     }
-    const useCase = await this.useCase.execute(data)
-    return create(useCase)
+    const result = await this.useCase.execute(data)
+    return create(result)
   }
 }

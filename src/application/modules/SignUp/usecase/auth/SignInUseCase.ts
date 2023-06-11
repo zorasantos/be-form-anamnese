@@ -1,7 +1,8 @@
 import { IEncryptAdapter } from '@shared/protocols/cryptography/IEncryptAdapter'
 import { ISignUpRepository } from '../../repository/ISignUpRepository'
 import { IAuthTokenAdapter } from '@shared/protocols/cryptography/IAuthTokenAdapter'
-
+import { Either, left, right } from '@shared/errors/either'
+import { AppError } from '@shared/errors/AppError'
 interface ISignInRequest {
   name: string
   password: string
@@ -11,6 +12,8 @@ interface ISignInRequest {
 export interface ISignInResponse {
   token: string
 }
+
+type Response = Either<AppError, ISignInResponse>
 
 interface IPayload {
   name: string
@@ -26,13 +29,13 @@ export class SignInUseCase {
     private authToken: IAuthTokenAdapter,
   ) {}
 
-  async execute(request: ISignInRequest): Promise<ISignInResponse> {
+  async execute(request: ISignInRequest): Promise<Response> {
     const { name, password, term } = request
     const user = await this.repository.findUserByName(name)
     const myPassword = user?.password.toString() as string
 
     if (!user) {
-      throw new Error('Email or password incorrect!')
+      return left(new AppError('Email or password incorrect!', 400))
     }
 
     const passwordMatch = await this.encryptAdapter.compare(
@@ -41,14 +44,14 @@ export class SignInUseCase {
     )
 
     if (!passwordMatch) {
-      throw new Error('Email or password incorrect!')
+      return left(new AppError('Email or password incorrect!', 400))
     }
 
     if (!user.term) {
       if (term) {
         await this.repository.updateTerm(term, user.id)
       } else {
-        throw new Error('Accept terms is required!')
+        return left(new AppError('Accept terms is required!', 400))
       }
     }
 
@@ -63,6 +66,6 @@ export class SignInUseCase {
 
     const token = this.authToken.generateToken(payload, user.id as string, '1d')
 
-    return { token }
+    return right({ token })
   }
 }
