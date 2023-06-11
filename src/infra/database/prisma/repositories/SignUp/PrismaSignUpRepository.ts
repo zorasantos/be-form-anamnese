@@ -23,6 +23,18 @@ export class PrismaSignUpRepository implements ISignUpRepository {
     return user as unknown as SignUp
   }
 
+  async findUserById(id: string): Promise<SignUp | null> {
+    const user = await prismaClient.user.findFirst({
+      where: { id },
+    })
+
+    if (!user) {
+      return null
+    }
+
+    return user as unknown as SignUp
+  }
+
   async updateTerm(term: boolean, userId: string): Promise<void> {
     await prismaClient.user.update({
       where: {

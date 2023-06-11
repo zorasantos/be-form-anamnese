@@ -1,4 +1,4 @@
-import { create } from '@shared/helper/httpHelper'
+import { badRequest, create } from '@shared/helper/httpHelper'
 import { IController } from '@shared/protocols/controller'
 import { HttpRequest, HttpResponse } from '@shared/protocols/http'
 import { CreatePersonalDataUseCase } from './CreatePersonalDataUseCase'
@@ -41,7 +41,8 @@ export class CreatePersonalDataController implements IController {
       street,
       zipCode,
     }
-    const useCase = await this.listUseCase.execute(data)
-    return create(useCase)
+    const result = await this.listUseCase.execute(data)
+    if (result.isLeft()) return badRequest(result.value)
+    return create(result.value)
   }
 }

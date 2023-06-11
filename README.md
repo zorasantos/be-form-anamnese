@@ -10,3 +10,4 @@
 2. Criar uma tabela que registre os acessos com dados como: count, gender, idade;
 2. Criar uma tabela que registre se os usuários fizeram todos os formulários;
 3. Usar a geração de token jwt nativa do node.
+4. Fazer o metodo either funcionar nos middleware

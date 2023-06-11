@@ -1,12 +1,22 @@
+import { Either, right } from '@shared/errors/either'
 import { IPersonalDataProps, PersonalData } from '../../Entities/PersonalData'
 import { IPersonalDataRepository } from '../../repository/IPersonalDataRepository'
+import { AppError } from '@shared/errors/AppError'
 
 interface IPersonalDataRequest extends IPersonalDataProps {}
+
+interface IPersonalResponse {
+  message: string
+}
+
+type Response = Either<AppError, IPersonalResponse>
+
+const message = 'Dados Pessoais cadastrados com sucesso!'
 
 export class CreatePersonalDataUseCase {
   constructor(private userRepository: IPersonalDataRepository) {}
 
-  async execute(request: IPersonalDataRequest): Promise<void> {
+  async execute(request: IPersonalDataRequest): Promise<Response> {
     const {
       name,
       birthday,
@@ -39,5 +49,7 @@ export class CreatePersonalDataUseCase {
     })
 
     await this.userRepository.create(personalData)
+
+    return right({ message })
   }
 }
