@@ -1,5 +1,5 @@
 - Fazer validação de erros
-- Invalidar o token após uso.
+- Invalidar o token após usuario concluir o cadastro.
 - Escrever testes pro signin
 - Cria o schema validation do signIn e validar se a propriedade term é true
 
