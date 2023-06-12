@@ -4,6 +4,7 @@ import express, { NextFunction, Response, Request } from 'express'
 import { router } from '../../routes/express'
 import cors from 'cors'
 import { AppError } from '@shared/errors/AppError'
+import { JsonWebTokenError } from 'jsonwebtoken'
 
 const APP_PORT = process.env.PORT_SERVER
 const TEST_PORT = 5001
@@ -21,6 +22,12 @@ appExpress.use(
     if (err instanceof AppError) {
       return res.status(err.statusCode).json({
         message: err.message.message,
+      })
+    }
+
+    if (err instanceof JsonWebTokenError) {
+      return res.status(401).json({
+        message: 'unauthorized',
       })
     }
 
