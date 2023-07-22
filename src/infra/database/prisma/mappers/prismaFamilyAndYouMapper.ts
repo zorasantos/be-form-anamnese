@@ -31,7 +31,7 @@ export class PrismaFamilyAndYouMapper {
       manyChildrenThereInFamily: data.manyChildrenThereInFamily,
       botherYou: data.botherYou,
       createdAt: data.createdAt,
-      updatedAt: data.updatedAt,
+      updatedAt: data.updatedAt
     }
   }
 }

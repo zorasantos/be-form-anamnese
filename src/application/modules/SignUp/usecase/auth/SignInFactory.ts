@@ -10,7 +10,7 @@ export const SignInFactory = (): SignInController => {
   const useCase = new SignInUseCase(
     signUpRepository,
     encryptAdapter,
-    authTokenAdapter,
+    authTokenAdapter
   )
   const controller = new SignInController(useCase)
 

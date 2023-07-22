@@ -10,7 +10,7 @@ const sessionRoutes = Router()
 sessionRoutes.post(
   '/session',
   validateSchemaExpress(signInSchema),
-  adaptRouteExpress(SignInFactory()),
+  adaptRouteExpress(SignInFactory())
 )
 
 sessionRoutes.post('/verify', adaptRouteExpress(VerifyTokenFactory()))

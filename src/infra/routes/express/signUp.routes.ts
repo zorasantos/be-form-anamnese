@@ -8,7 +8,7 @@ const signupRoutes = Router()
 signupRoutes.post(
   '/signup',
   validateSchemaExpress(signUpSchema),
-  adaptRouteExpress(CreateSignUpFactory()),
+  adaptRouteExpress(CreateSignUpFactory())
 )
 
 export { signupRoutes }

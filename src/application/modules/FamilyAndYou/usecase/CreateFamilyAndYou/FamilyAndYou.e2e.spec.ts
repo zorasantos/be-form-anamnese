@@ -30,7 +30,7 @@ describe('Family and You', () => {
     const newData = {
       ...familyAndYouData,
       personalDataId,
-      placeOfBirth: '',
+      placeOfBirth: ''
     }
 
     const response = await request(appExpress)
@@ -39,7 +39,7 @@ describe('Family and You', () => {
 
     expect(response.status).toBe(400)
     expect(response.body.message).toEqual(
-      'Place Of birth field cannot be empty!',
+      'Place Of birth field cannot be empty!'
     )
   })
 })

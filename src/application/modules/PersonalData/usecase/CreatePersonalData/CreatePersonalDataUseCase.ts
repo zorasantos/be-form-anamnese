@@ -30,7 +30,7 @@ export class CreatePersonalDataUseCase {
       addressDetails,
       neighborhood,
       city,
-      state,
+      state
     } = request
     const personalData = new PersonalData({
       name,
@@ -45,7 +45,7 @@ export class CreatePersonalDataUseCase {
       addressDetails,
       neighborhood,
       city,
-      state,
+      state
     })
 
     await this.userRepository.create(personalData)

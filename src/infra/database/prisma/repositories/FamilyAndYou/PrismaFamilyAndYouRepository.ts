@@ -14,8 +14,8 @@ export class PrismaFamilyAndYouRepository implements IFamilyAndYouRepository {
             name: item.name,
             problems: item.problem,
             createdAt: new Date(),
-            updatedAt: new Date(),
-          })),
+            updatedAt: new Date()
+          }))
         },
         children: {
           create: data.children?.map((item) => ({
@@ -25,10 +25,10 @@ export class PrismaFamilyAndYouRepository implements IFamilyAndYouRepository {
             gender: item.gender,
             occupation: item.occupation,
             createdAt: new Date(),
-            updatedAt: new Date(),
-          })),
-        },
-      },
+            updatedAt: new Date()
+          }))
+        }
+      }
     })
   }
 }

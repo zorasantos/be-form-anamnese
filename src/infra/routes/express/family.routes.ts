@@ -8,7 +8,7 @@ const familyRoutes = Router()
 familyRoutes.post(
   '/family',
   validateSchemaExpress(familyAndYouSchema),
-  adaptRouteExpress(CreateFamilyAndYouFactory()),
+  adaptRouteExpress(CreateFamilyAndYouFactory())
 )
 
 export { familyRoutes }

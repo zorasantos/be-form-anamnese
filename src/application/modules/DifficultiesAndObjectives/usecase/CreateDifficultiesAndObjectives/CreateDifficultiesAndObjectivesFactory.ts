@@ -5,7 +5,7 @@ import { CreateDifficultiesAndObjectivesUseCase } from './CreateDifficultiesAndO
 export const CreateDifficultiesAndObjectivesFactory =
   (): CreateDifficultiesAndObjectivesController => {
     const useCase = new CreateDifficultiesAndObjectivesUseCase(
-      difficultiesAndObjectivesRepository,
+      difficultiesAndObjectivesRepository
     )
     const controller = new CreateDifficultiesAndObjectivesController(useCase)
 

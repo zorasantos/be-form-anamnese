@@ -203,7 +203,7 @@ export class FamilyAndYou {
   }
 
   public set historyOfMentalIllness(
-    historyOfMentalIllness: number | undefined,
+    historyOfMentalIllness: number | undefined
   ) {
     this.props.historyOfMentalIllness = historyOfMentalIllness
   }
@@ -229,7 +229,7 @@ export class FamilyAndYou {
   }
 
   public set anyMemberFamilySuicideAttempt(
-    anyMemberFamilySuicideAttempt: number | undefined,
+    anyMemberFamilySuicideAttempt: number | undefined
   ) {
     this.props.anyMemberFamilySuicideAttempt = anyMemberFamilySuicideAttempt
   }
@@ -239,7 +239,7 @@ export class FamilyAndYou {
   }
 
   public set anyMemberFamilyDiedBySuicide(
-    anyMemberFamilyDiedBySuicide: number | undefined,
+    anyMemberFamilyDiedBySuicide: number | undefined
   ) {
     this.props.anyMemberFamilyDiedBySuicide = anyMemberFamilyDiedBySuicide
   }
@@ -249,7 +249,7 @@ export class FamilyAndYou {
   }
 
   public set manyChildrenThereInFamily(
-    manyChildrenThereInFamily: number | undefined,
+    manyChildrenThereInFamily: number | undefined
   ) {
     this.props.manyChildrenThereInFamily = manyChildrenThereInFamily
   }

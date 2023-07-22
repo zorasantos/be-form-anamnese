@@ -11,7 +11,7 @@ describe('Difficulties And Objectives', () => {
       difficultFirst: 'Só primeira dificuldade',
       difficultSecond: 'Segunda dificuldade',
       difficultThird: 'Terceira dificuldade',
-      objective: 'Objetivo',
+      objective: 'Objetivo'
     }
 
     const result = await useCase.execute(data)

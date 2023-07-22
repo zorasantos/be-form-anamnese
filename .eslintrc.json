@@ -4,6 +4,16 @@
     "jest": true
   },
   "rules": {
-    "no-useless-constructor": "off"
+    "no-useless-constructor": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto",
+        "singleQuote": true,
+        "trailingComma": "none",
+        "arrowParens": "always",
+        "semi": false
+      }
+    ]
   }
 }

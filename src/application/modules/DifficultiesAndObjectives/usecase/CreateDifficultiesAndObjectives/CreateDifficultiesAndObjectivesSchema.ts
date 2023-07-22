@@ -13,15 +13,15 @@ export const difficultiesAndObjectivesSchema = z.object({
       personalDataId: fieldSchema('Personal data id'),
       difficultFirst: fieldSchema('Difficult first'),
       difficultSecond: z.string(
-        customMsgSchemaValidation('Difficult Second', 'string'),
+        customMsgSchemaValidation('Difficult Second', 'string')
       ),
       difficultThird: z.string(
-        customMsgSchemaValidation('Difficult Third', 'string'),
+        customMsgSchemaValidation('Difficult Third', 'string')
       ),
-      objective: z.string(customMsgSchemaValidation('Objective', 'string')),
+      objective: z.string(customMsgSchemaValidation('Objective', 'string'))
     })
     .nonstrict()
     .refine((data) => Object.keys(data).length <= 5, {
-      message: 'Unexpected properties found in request body',
-    }),
+      message: 'Unexpected properties found in request body'
+    })
 })

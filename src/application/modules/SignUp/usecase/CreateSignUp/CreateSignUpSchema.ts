@@ -15,10 +15,10 @@ export const signUpSchema = z.object({
       name: fieldSchema('Name'),
       birthday: fieldSchema('Birthday'),
       password: fieldSchema('Password'),
-      profile: ProfileEnum,
+      profile: ProfileEnum
     })
     .nonstrict()
     .refine((data) => Object.keys(data).length <= 4, {
-      message: 'Unexpected properties found in request body',
-    }),
+      message: 'Unexpected properties found in request body'
+    })
 })

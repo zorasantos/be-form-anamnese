@@ -35,7 +35,7 @@ describe('Difficulties And Objectives', () => {
 
     expect(response.status).toBe(400)
     expect(response.body.message).toEqual(
-      'Difficult first field cannot be empty!',
+      'Difficult first field cannot be empty!'
     )
   })
 })

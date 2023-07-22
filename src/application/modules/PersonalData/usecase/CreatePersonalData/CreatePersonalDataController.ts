@@ -23,7 +23,7 @@ export class CreatePersonalDataController implements IController {
       religion,
       state,
       street,
-      zipCode,
+      zipCode
     } = request.body as IPersonalDataRequest
 
     const data = {
@@ -39,7 +39,7 @@ export class CreatePersonalDataController implements IController {
       religion,
       state,
       street,
-      zipCode,
+      zipCode
     }
     const result = await this.listUseCase.execute(data)
     if (result.isLeft()) return badRequest(result.value)

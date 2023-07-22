@@ -12,10 +12,10 @@ export const signInSchema = z.object({
     .object({
       name: fieldSchema('Name'),
       password: fieldSchema('Password'),
-      term: z.boolean(customMsgSchemaValidation('Term', 'boolean')),
+      term: z.boolean(customMsgSchemaValidation('Term', 'boolean'))
     })
     .nonstrict()
     .refine((data) => Object.keys(data).length <= 3, {
-      message: 'Unexpected properties found in request body',
-    }),
+      message: 'Unexpected properties found in request body'
+    })
 })

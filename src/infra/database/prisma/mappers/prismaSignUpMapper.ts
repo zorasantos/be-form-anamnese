@@ -10,7 +10,7 @@ export class PrismaSignUpMapper {
       profile: data.profile,
       term: data.term,
       createdAt: data.createdAt,
-      updatedAt: data.updatedAt,
+      updatedAt: data.updatedAt
     }
   }
 }

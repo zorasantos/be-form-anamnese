@@ -11,7 +11,7 @@ export class PrismaDifficultiesAndObjectivesMapper {
       difficultThird: data.difficultThird,
       objective: data.objective,
       createdAt: data.createdAt,
-      updatedAt: data.updatedAt,
+      updatedAt: data.updatedAt
     }
   }
 }

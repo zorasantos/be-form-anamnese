@@ -26,7 +26,7 @@ export class SignInUseCase {
   constructor(
     private repository: ISignUpRepository,
     private encryptAdapter: IEncryptAdapter,
-    private authToken: IAuthTokenAdapter,
+    private authToken: IAuthTokenAdapter
   ) {}
 
   async execute(request: ISignInRequest): Promise<Response> {
@@ -40,7 +40,7 @@ export class SignInUseCase {
 
     const passwordMatch = await this.encryptAdapter.compare(
       password,
-      myPassword,
+      myPassword
     )
 
     if (!passwordMatch) {
@@ -61,7 +61,7 @@ export class SignInUseCase {
       userId: user.id,
       name: user.name,
       profile: user.profile,
-      term: getTerm?.term as boolean,
+      term: getTerm?.term as boolean
     }
 
     const token = this.authToken.generateToken(payload, user.id as string, '1d')

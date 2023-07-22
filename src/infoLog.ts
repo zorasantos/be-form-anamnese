@@ -7,8 +7,8 @@ const table = new Table({
     chalk.cyan('Port'),
     chalk.cyan('Database'),
     chalk.cyan('ORM'),
-    chalk.cyan('Environment'),
-  ],
+    chalk.cyan('Environment')
+  ]
 })
 
 export const logApplicationInfo = async () => {
@@ -20,7 +20,7 @@ export const logApplicationInfo = async () => {
     process.env.PORT_SERVER,
     process.env.DATABASE,
     process.env.REPOSITORY_TYPE,
-    process.env.NODE_ENV,
+    process.env.NODE_ENV
   ])
 
   console.log(table.toString())

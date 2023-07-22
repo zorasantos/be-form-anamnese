@@ -20,14 +20,14 @@ export const personalDataSchema = z.object({
       street: fieldSchema('Street'),
       number: fieldSchema('Number'),
       addressDetails: z.string(
-        customMsgSchemaValidation('Address detail', 'string'),
+        customMsgSchemaValidation('Address detail', 'string')
       ),
       neighborhood: fieldSchema('Neighborhood'),
       city: fieldSchema('City'),
-      state: fieldSchema('State'),
+      state: fieldSchema('State')
     })
     .nonstrict()
     .refine((data) => Object.keys(data).length <= 13, {
-      message: 'Unexpected properties found in request body',
-    }),
+      message: 'Unexpected properties found in request body'
+    })
 })

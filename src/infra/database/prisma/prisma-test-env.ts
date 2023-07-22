@@ -1,6 +1,6 @@
 import type {
   EnvironmentContext,
-  JestEnvironmentConfig,
+  JestEnvironmentConfig
 } from '@jest/environment'
 
 import { exec } from 'node:child_process'
@@ -38,7 +38,7 @@ export default class PrismaTestEnvironment extends NodeEnvironment {
     this.global.process.env.DATABASE_URL = this.connectionString
 
     await execSync(
-      `${prismaBinary} migrate deploy --schema=./src/infra/database/prisma/schema.prisma`,
+      `${prismaBinary} migrate deploy --schema=./src/infra/database/prisma/schema.prisma`
     )
 
     return super.setup()
@@ -46,7 +46,7 @@ export default class PrismaTestEnvironment extends NodeEnvironment {
 
   async teardown() {
     const client = new Client({
-      connectionString: this.connectionString,
+      connectionString: this.connectionString
     })
 
     await client.connect()

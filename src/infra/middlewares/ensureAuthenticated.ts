@@ -11,7 +11,7 @@ const SECRET_TOKEN = process.env.SECRET_JWT
 export async function ensureAuthenticated(
   req: Request,
   _res: Response,
-  next: NextFunction,
+  next: NextFunction
 ): Promise<void> {
   const token = req.headers.authorization
 

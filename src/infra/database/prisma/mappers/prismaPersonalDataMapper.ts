@@ -19,7 +19,7 @@ export class PrismaPersonalDataMapper {
       city: data.city,
       state: data.state,
       createdAt: data.createdAt,
-      updatedAt: data.updatedAt,
+      updatedAt: data.updatedAt
     }
   }
 }

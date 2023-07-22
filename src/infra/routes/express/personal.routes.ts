@@ -10,7 +10,7 @@ personalRoutes.post(
   '/personal',
   ensureAuthenticated,
   validateSchemaExpress(personalDataSchema),
-  adaptRouteExpress(CreatePersonalDataFactory()),
+  adaptRouteExpress(CreatePersonalDataFactory())
 )
 
 export { personalRoutes }

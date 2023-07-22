@@ -13,5 +13,5 @@ export {
   personalDataRepository,
   difficultiesAndObjectivesRepository,
   familyRepository,
-  signUpRepository,
+  signUpRepository
 }

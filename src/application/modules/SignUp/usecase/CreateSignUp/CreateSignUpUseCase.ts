@@ -19,7 +19,7 @@ export class CreateSignUpUseCase {
       name,
       birthday,
       password: new Password(password),
-      profile,
+      profile
     })
 
     await this.repository.create(personalData)

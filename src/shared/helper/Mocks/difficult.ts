@@ -5,5 +5,5 @@ export const difficultData: IDifficultiesAndObjectives = {
   difficultFirst: 'Só primeira dificuldade',
   difficultSecond: 'Segunda dificuldade',
   difficultThird: 'Terceira dificuldade',
-  objective: 'Objetivo',
+  objective: 'Objetivo'
 }

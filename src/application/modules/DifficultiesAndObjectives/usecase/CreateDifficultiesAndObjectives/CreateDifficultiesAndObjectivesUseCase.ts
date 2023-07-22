@@ -1,6 +1,6 @@
 import {
   DifficultiesAndObjectives,
-  IDifficultiesAndObjectives,
+  IDifficultiesAndObjectives
 } from '../../Entities/DifficultiesAndObjectives'
 import { IDifficultiesAndObjectivesRepository } from '../../repository/IDifficultiesAndObjectivesRepository'
 
@@ -16,14 +16,14 @@ export class CreateDifficultiesAndObjectivesUseCase {
       difficultSecond,
       difficultThird,
       objective,
-      personalDataId,
+      personalDataId
     } = request
     const data = new DifficultiesAndObjectives({
       personalDataId,
       difficultFirst,
       difficultSecond,
       difficultThird,
-      objective,
+      objective
     })
 
     const result = await this.repository.create(data)

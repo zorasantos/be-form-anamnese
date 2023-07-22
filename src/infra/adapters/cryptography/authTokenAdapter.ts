@@ -7,7 +7,7 @@ export class AuthTokenAdapter implements IAuthTokenAdapter {
   generateToken(payload: object, sub: string, exp: string): string {
     const token = jwt.sign({ ...payload }, SECRET_TOKEN, {
       subject: sub,
-      expiresIn: exp,
+      expiresIn: exp
     })
     return token
   }

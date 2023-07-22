@@ -9,7 +9,7 @@ interface IDifficultiesAndObjectivesRequest
 
 export class CreateDifficultiesAndObjectivesController implements IController {
   constructor(
-    private readonly useCase: CreateDifficultiesAndObjectivesUseCase,
+    private readonly useCase: CreateDifficultiesAndObjectivesUseCase
   ) {}
 
   async handle(request: HttpRequest): Promise<HttpResponse> {
@@ -18,7 +18,7 @@ export class CreateDifficultiesAndObjectivesController implements IController {
       difficultSecond,
       difficultThird,
       objective,
-      personalDataId,
+      personalDataId
     } = request.body as IDifficultiesAndObjectivesRequest
 
     const data = {
@@ -26,7 +26,7 @@ export class CreateDifficultiesAndObjectivesController implements IController {
       difficultFirst,
       difficultSecond,
       difficultThird,
-      objective,
+      objective
     }
     const useCase = await this.useCase.execute(data)
     return create(useCase)

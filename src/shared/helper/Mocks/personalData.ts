@@ -13,5 +13,5 @@ export const personalData: IPersonalDataProps = {
   religion: 'Cristão',
   state: 'ce',
   street: 'Rua do avião',
-  zipCode: '60310500',
+  zipCode: '60310500'
 }

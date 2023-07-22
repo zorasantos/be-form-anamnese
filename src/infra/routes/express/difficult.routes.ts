@@ -8,7 +8,7 @@ const difficultRoutes = Router()
 difficultRoutes.post(
   '/difficult',
   validateSchemaExpress(difficultiesAndObjectivesSchema),
-  adaptRouteExpress(CreateDifficultiesAndObjectivesFactory()),
+  adaptRouteExpress(CreateDifficultiesAndObjectivesFactory())
 )
 
 export { difficultRoutes }

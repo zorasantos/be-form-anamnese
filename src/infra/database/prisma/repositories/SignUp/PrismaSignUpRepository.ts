@@ -7,13 +7,13 @@ export class PrismaSignUpRepository implements ISignUpRepository {
   async create(data: SignUp): Promise<void> {
     const raw = PrismaSignUpMapper.toPrisma(data)
     await prismaClient.user.create({
-      data: raw,
+      data: raw
     })
   }
 
   async findUserByName(name: string): Promise<SignUp | null> {
     const user = await prismaClient.user.findFirst({
-      where: { name },
+      where: { name }
     })
 
     if (!user) {
@@ -25,7 +25,7 @@ export class PrismaSignUpRepository implements ISignUpRepository {
 
   async findUserById(id: string): Promise<SignUp | null> {
     const user = await prismaClient.user.findFirst({
-      where: { id },
+      where: { id }
     })
 
     if (!user) {
@@ -38,11 +38,11 @@ export class PrismaSignUpRepository implements ISignUpRepository {
   async updateTerm(term: boolean, userId: string): Promise<void> {
     await prismaClient.user.update({
       where: {
-        id: userId,
+        id: userId
       },
       data: {
-        term,
-      },
+        term
+      }
     })
   }
 }

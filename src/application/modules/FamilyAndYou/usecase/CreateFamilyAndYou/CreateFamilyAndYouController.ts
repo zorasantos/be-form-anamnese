@@ -35,7 +35,7 @@ export class CreateFamilyAndYouController implements IController {
       anyMemberFamilySuicideAttempt,
       anyMemberFamilyDiedBySuicide,
       manyChildrenThereInFamily,
-      botherYou,
+      botherYou
     } = request.body as IFamilyAndYouPropsRequest
 
     const data = {
@@ -63,7 +63,7 @@ export class CreateFamilyAndYouController implements IController {
       anyMemberFamilySuicideAttempt,
       anyMemberFamilyDiedBySuicide,
       manyChildrenThereInFamily,
-      botherYou,
+      botherYou
     }
     const useCase = await this.createUseCase.execute(data)
     return create(useCase)

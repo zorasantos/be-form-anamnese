@@ -32,7 +32,7 @@ export class CreateFamilyAndYouUseCase {
       anyMemberFamilySuicideAttempt,
       anyMemberFamilyDiedBySuicide,
       manyChildrenThereInFamily,
-      botherYou,
+      botherYou
     } = request
     const data = new FamilyAndYou({
       personalDataId,
@@ -59,7 +59,7 @@ export class CreateFamilyAndYouUseCase {
       anyMemberFamilySuicideAttempt,
       anyMemberFamilyDiedBySuicide,
       manyChildrenThereInFamily,
-      botherYou,
+      botherYou
     })
 
     const result = await this.repository.create(data)

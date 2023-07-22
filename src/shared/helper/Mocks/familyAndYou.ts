@@ -22,7 +22,7 @@ export const familyAndYouData: IFamilyAndYouProps = {
   historyOfMentalIllness: 0,
   member: [
     { name: 'Zora', problem: 'Teste' },
-    { name: 'Zora', problem: 'Teste' },
+    { name: 'Zora', problem: 'Teste' }
   ],
   children: [
     {
@@ -30,11 +30,11 @@ export const familyAndYouData: IFamilyAndYouProps = {
       occupation: '',
       age: 37,
       gender: 'M',
-      comments: '',
-    },
+      comments: ''
+    }
   ],
   anyMemberFamilySuicideAttempt: 0,
   anyMemberFamilyDiedBySuicide: 0,
   manyChildrenThereInFamily: 0,
-  botherYou: '',
+  botherYou: ''
 }

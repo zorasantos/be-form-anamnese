@@ -9,7 +9,7 @@ export class PrismaDifficultiesAndObjectivesRepository
   async create(data: DifficultiesAndObjectives): Promise<void> {
     const raw = PrismaDifficultiesAndObjectivesMapper.toPrisma(data)
     await prismaClient.difficultiesAndObjectives.create({
-      data: raw,
+      data: raw
     })
   }
 }

@@ -18,7 +18,7 @@ describe('Personal Data', () => {
       religion: 'Cristão',
       state: 'ce',
       street: 'Rua Dom Quintino',
-      zipCode: '60310500',
+      zipCode: '60310500'
     }
 
     const result = await personalData.execute(data)

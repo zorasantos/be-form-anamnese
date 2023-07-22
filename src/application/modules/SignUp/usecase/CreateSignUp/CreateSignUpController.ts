@@ -18,7 +18,7 @@ export class CreateSignUpController implements IController {
       name,
       birthday,
       password,
-      profile: typeProfile,
+      profile: typeProfile
     } = request.body as ISignUpDTO
 
     // Refatorar para user value object
@@ -28,7 +28,7 @@ export class CreateSignUpController implements IController {
       name,
       birthday,
       password,
-      profile,
+      profile
     }
     const result = await this.useCase.execute(data)
     return create(result)

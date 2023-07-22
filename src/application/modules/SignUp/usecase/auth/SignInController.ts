@@ -18,7 +18,7 @@ export class SignInController implements IController {
     const data = {
       name,
       password,
-      term,
+      term
     }
     const result = await this.useCase.execute(data)
     if (result.isLeft()) return badRequest(result.value)
