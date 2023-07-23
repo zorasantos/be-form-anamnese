@@ -1,4 +1,4 @@
-FROM node:18.16.0
+FROM node:18-alpine
 
 RUN npm install -g npm@8.12.2
 
