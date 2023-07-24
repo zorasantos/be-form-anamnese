@@ -30,7 +30,6 @@ export class SignInUseCase {
   ) {}
 
   async execute(request: ISignInRequest): Promise<Response> {
-    console.log('Refletiu')
     const { name, password, term } = request
     const user = await this.repository.findUserByName(name)
     const myPassword = user?.password.toString() as string

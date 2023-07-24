@@ -1,7 +1,10 @@
 import { customMsgSchemaValidation } from '@shared/helper'
 import { z } from 'zod'
 
-const ProfileEnum = z.enum(['USER', 'ADMIN', ''])
+const ProfileEnum = z.enum(['USER', 'ADMIN', ''], {
+  invalid_type_error: 'Invalid type!',
+  required_error: 'Profile field is required!'
+})
 
 const fieldSchema = (fieldName: string) => {
   return z
