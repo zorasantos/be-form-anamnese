@@ -14,7 +14,7 @@ dotenv.config({ path: '.env.testing' })
 
 const execSync = util.promisify(exec)
 
-const prismaBinary = './node_modules/.bin/prisma'
+// const prismaBinary = './node_modules/.bin/prisma'
 
 export default class PrismaTestEnvironment extends NodeEnvironment {
   private schema: string
@@ -38,7 +38,8 @@ export default class PrismaTestEnvironment extends NodeEnvironment {
     this.global.process.env.DATABASE_URL = this.connectionString
 
     await execSync(
-      `${prismaBinary} migrate deploy --schema=./src/infra/database/prisma/schema.prisma`
+      // ou ${prismaBinary} migrate deploy --schema=./src/infra/database/prisma/schema.prisma no linux
+      `npx prisma migrate deploy --schema=./src/infra/database/prisma/schema.prisma`
     )
 
     return super.setup()

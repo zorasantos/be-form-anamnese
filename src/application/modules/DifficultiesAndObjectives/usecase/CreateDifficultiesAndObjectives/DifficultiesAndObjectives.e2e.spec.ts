@@ -1,13 +1,28 @@
 import { prismaClient } from '@infra/database/prisma/prismaClient'
 import { appExpress, closeAppExpress } from '@infra/ports/express'
-import { personalData, difficultData } from '@shared/helper/Mocks'
+import {
+  personalData,
+  difficultData,
+  signUpData,
+  loginData
+} from '@shared/helper/Mocks'
 import request from 'supertest'
 
 describe('Difficulties And Objectives', () => {
   let personalDataId: string
 
   beforeEach(async () => {
-    await request(appExpress).post('/v1/form/personal').send(personalData)
+    await request(appExpress).post('/v1/form/signup').send(signUpData)
+
+    const resLogin = await request(appExpress)
+      .post('/v1/form/session')
+      .send(loginData)
+
+    await request(appExpress)
+      .post('/v1/form/personal')
+      .send(personalData)
+      .set({ Authorization: resLogin.body.token })
+
     const result = await prismaClient.personalData.findFirst()
     personalDataId = result?.id as string
   })

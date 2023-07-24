@@ -20,7 +20,7 @@ export default async (): Promise<Config> => {
     testEnvironment: './src/infra/database/prisma/prisma-test-env.ts',
     testPathIgnorePatterns: ['/node_modules/', '/coverage/'],
     moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
-      prefix: '<rootDir>/src/',
-    }),
+      prefix: '<rootDir>/src/'
+    })
   }
 }

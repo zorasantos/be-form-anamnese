@@ -3,7 +3,7 @@ import { IPersonalDataProps, PersonalData } from '../../Entities/PersonalData'
 import { IPersonalDataRepository } from '../../repository/IPersonalDataRepository'
 import { AppError } from '@shared/errors/AppError'
 
-interface IPersonalDataRequest extends IPersonalDataProps {}
+type IPersonalDataRequest = IPersonalDataProps
 
 interface IPersonalResponse {
   message: string

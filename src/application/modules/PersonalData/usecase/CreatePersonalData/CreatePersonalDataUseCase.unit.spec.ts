@@ -22,6 +22,6 @@ describe('Personal Data', () => {
     }
 
     const result = await personalData.execute(data)
-    expect(result).toBe(undefined)
+    expect(result.value.message).toBe('Dados Pessoais cadastrados com sucesso!')
   })
 })

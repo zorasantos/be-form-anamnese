@@ -4,7 +4,7 @@ import { HttpRequest, HttpResponse } from '@shared/protocols/http'
 import { CreatePersonalDataUseCase } from './CreatePersonalDataUseCase'
 import { IPersonalDataProps } from '../../Entities/PersonalData'
 
-interface IPersonalDataRequest extends IPersonalDataProps {}
+type IPersonalDataRequest = IPersonalDataProps
 
 export class CreatePersonalDataController implements IController {
   constructor(private readonly listUseCase: CreatePersonalDataUseCase) {}
